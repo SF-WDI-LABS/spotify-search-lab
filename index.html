@@ -19,6 +19,19 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
+        <br>
+        <form id="spotify-search">
+          <div class="form-group">
+            <input class="form-control" id="track" placeholder="Song Title" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-block btn-success" value="Search">
+          </div>
+        </form>
+        <div class="text-center" id="loading">
+          <img src="loading.gif" width="80">
+        </div>
+        <br>
         <div id="results"></div>
       </div>
     </div>
