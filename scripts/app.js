@@ -16,6 +16,10 @@ $(document).on('ready', function() {
   // loading gif
   var $loading = $('#loading');
 
+  // compile handlebars template
+  var source = $('#track-template').html();
+  var template = Handlebars.compile(source);
+
   // submit form to search spotify API
   $spotifySearch.on('submit', function (event) {
     event.preventDefault();
@@ -44,23 +48,9 @@ $(document).on('ready', function() {
       // only append results if there are any
       if (trackResults.length > 0) {
 
-        // iterate through results
-        trackResults.forEach(function (result, index) {
-
-          // build object of data we want in our view
-          var trackData = {
-            albumArt: result.album.images.length > 0 ? result.album.images[0].url : null,
-            artist: result.artists[0].name,
-            name: result.name,
-            previewUrl: result.preview_url
-          };
-
-          // use data to construct HTML we want to show
-          var $trackHtml = '<div class="row"><div class="col-xs-4"><img src="' + trackData.albumArt + '" class="img-responsive"></div><div class="col-xs-8"><p><strong>' + trackData.name + '</strong> by ' + trackData.artist + '</p><p><a href="' + trackData.previewUrl + '" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></span></a></p></div></div><hr>';
-
-          // append HTML to the view
-          $results.append($trackHtml);
-        });
+        // pass in data to render in the template
+        var trackHtml = template({ tracks: trackResults });
+        $results.append(trackHtml);
 
       // else let user know there are no results
       } else {

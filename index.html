@@ -32,13 +32,34 @@
           <img src="loading.gif" width="80">
         </div>
         <br>
-        <div id="results"></div>
+        <div id="results">
+          
+          <!-- handlebars template -->
+          <script id="track-template" type="text/x-handlebars-template">
+            {{#each tracks}}
+            <div class="row">
+              <div class="col-xs-4">
+                <img src="{{album.images.[0].url}}" class="img-responsive">
+              </div>
+              <div class="col-xs-8">
+                <p><strong>{{name}}</strong> by {{artists.[0].name}}</p>
+                <p><a href="{{previewUrl}}" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></span></a></p>
+              </div>
+            </div>
+            <hr>
+            {{/each}}
+          </script>
+        
+        </div>
       </div>
     </div>
   </div>
 
   <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  <!-- handlebars -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
 
   <!-- bootstrap js -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
