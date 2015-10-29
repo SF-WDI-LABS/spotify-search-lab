@@ -45,17 +45,11 @@ $(document).on('ready', function() {
       // hide loading gif
       $loading.hide();
 
-      // only append results if there are any
-      if (trackResults.length > 0) {
+      // pass in data to render in the template
+      var trackHtml = template({ tracks: trackResults });
 
-        // pass in data to render in the template
-        var trackHtml = template({ tracks: trackResults });
-        $results.append(trackHtml);
-
-      // else let user know there are no results
-      } else {
-        $results.append('<p class="text-center">No results</p>');
-      }
+      // append html to the view
+      $results.append(trackHtml);
     });
 
     // reset the form
