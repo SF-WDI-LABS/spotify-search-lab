@@ -17,7 +17,7 @@ $(document).on('ready', function() {
   var $loading = $('#loading');
 
   // compile handlebars template
-  var source = $('#track-template').html();
+  var source = $('#tracks-template').html();
   var template = Handlebars.compile(source);
 
   // submit form to search spotify API
