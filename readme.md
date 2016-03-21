@@ -31,5 +31,5 @@
 
 ## Resources
 
-* <a href="https://api.jquery.com/jquery.get" target="_blank">jQuery.get()</a>
+* <a href="https://api.jquery.com/jquery.ajax" target="_blank">jQuery.ajax()</a>
 * <a href="https://developer.spotify.com/web-api/search-item" target="_blank">Spotify Search Endpoint</a>
