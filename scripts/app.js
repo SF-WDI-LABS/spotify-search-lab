@@ -20,22 +20,31 @@ $(document).on('ready', function() {
   $spotifySearch.on('submit', function handleFormSubmit(event) {
     event.preventDefault();
 
-    // empty previous results and show loading gif
+    // empty previous results
     $results.empty();
-    $loading.show();
 
     // save form data to variable
     var searchTrack = $track.val();
 
-    // spotify search URL
-    var searchUrl = 'https://api.spotify.com/v1/search?type=track&q=' + searchTrack;
+    // only search if the form had a keyword to search with!
+    if (searchTrack !== ""){
+      // show loading gif
+      $loading.show();
 
-    // use AJAX to call spotify API
-    $.ajax({
-      method: 'GET',
-      url: searchUrl,
-      success: handleSpotifyData // see this function defined below
-    });
+      // spotify search URL
+      var searchUrl = 'https://api.spotify.com/v1/search?type=track&q=' + searchTrack;
+
+      // use AJAX to call spotify API
+      $.ajax({
+        method: 'GET',
+        url: searchUrl,
+        success: handleSpotifyData // see this function defined below
+      });
+    } else {
+      // remind the user to enter a keyword 
+      // one way is a "quick and ugly" alert
+      alert("Enter a keyword to search!");
+    }
 
     // reset the form
     $spotifySearch[0].reset();
