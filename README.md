@@ -19,7 +19,7 @@
 
 ## Getting Started
 
-1. Fork this repo, and clone it into your `wdi`, `devel` or whichever folder you keep your WDI work in on your local machine.
+1. Fork this repo, and clone it into your class work folder (`wdi`, `devel` or whichever folder you keep your WDI work in on your local machine).
 2. Practice querying Spotify's search endpoint using Postman with a couple different search keywords. You'll want to set `type=track` in your request URL. Look at the response data, and figure out how you would access the track name and artist name for a particular track (this will involve accessing values from nested objects and arrays).
 3. Once you feel comfortable with the structure of the response data, work on using AJAX to make the API call to Spotify when the user submits the form.
 4. Start by `console.log`-ing the response data. Once you have that working, access the data you need (track name and artist name), and use jQuery to `append` it to the page. **Hint:** You'll need to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">Array#forEach</a> to iterate through all the tracks Spotify returns in the response data.
