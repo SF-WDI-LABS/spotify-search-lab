@@ -3,71 +3,35 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- set viewport to device width to help make site responsive -->
+  <!-- set viewport to device width to make site responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Spotify Search</title>
-
   <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
   <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
 
-  <!-- jquery -->
-  <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-
-  <!-- handlebars -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-
-  <!-- custom script -->
-  <script type="text/javascript" src="js/app.js"></script>
-
+  <title>Spotify Search</title>
 </head>
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <br>
-        <form id="spotify-search">
-          <div class="form-group">
-            <input class="form-control" id="track" placeholder="Song Title" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-block btn-success" value="Search">
-          </div>
-        </form>
-        <div class="text-center" id="loading">
-          <img src="images/loading.gif" width="80">
-        </div>
-        <br>
-        <div id="results">
-
-          <!-- handlebars template -->
-          <script id="tracks-template" type="text/x-handlebars-template">
-            {{#each tracks}}
-              <div class="row">
-                <div class="col-xs-4">
-                  {{#if album.images.[0]}}
-                    <img src="{{album.images.[0].url}}" class="img-responsive">
-                  {{/if}}
-                </div>
-                <div class="col-xs-8">
-                  <p><strong>{{name}}</strong> by {{artists.[0].name}}</p>
-                  <p><a href="{{previewUrl}}" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></span></a></p>
-                </div>
-              </div>
-              <hr>
-            {{else}}
-              <p class="text-center">No results</p>
-            {{/each}}
-          </script>
-
-        </div>
+        <div id="results"></div>
       </div>
     </div>
   </div>
+
+  <!-- jquery -->
+  <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- custom script -->
+  <script type="text/javascript" src="scripts/app.js"></script>
 </body>
 </html>
