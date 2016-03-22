@@ -22,6 +22,8 @@ Optionally, challenge yourself to take the project farther!
 2. Spotify gives us a `preview_url` for each track. Create a play button for each track in your view that opens the `preview_url` in a new tab (it will start playing the song!).
 3. It would be nice to let the user know something is happening in the few milliseconds between submitting the form and getting data on the page. Show `loading.gif` (provided in the `images` directory) when the form submits, and hide it when you get data back from Spotify.
 4. Handle the case where no data comes back from Spotify. You'll want to let the user know that there are no results, rather than just showing a blank page.
+5. Handle the case where the user submits the search with an empty keyword. Check out the error in the console when submitting this form blank; spotify considers this a "bad request!" Don't let the user sumbit the form if it's blank.
+
 
 ## Getting Started
 
