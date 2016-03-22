@@ -69,7 +69,12 @@ $(document).on('ready', function() {
         };
 
         // use data to construct HTML we want to show
-        var $trackHtml = '<div class="row"><div class="col-xs-4"><img src="' + trackData.albumArt + '" class="img-responsive"></div><div class="col-xs-8"><p><strong>' + trackData.name + '</strong> by ' + trackData.artist + '</p><p><a href="' + trackData.previewUrl + '" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></span></a></p></div></div><hr>';
+        var $trackHtml = '<div class="row"><div class="col-xs-4">' + 
+          '<img src="' + trackData.albumArt + '" class="img-responsive"></div>' + 
+          '<div class="col-xs-8"><p><strong>' + trackData.name + '</strong> by ' + 
+          trackData.artist + '</p><p><a href="' + trackData.previewUrl + 
+          '" target="_blank" class="btn btn-sm btn-default">Preview ' +
+          '<span class="glyphicon glyphicon-play"></span></a></p></div></div><hr>';
 
         // append HTML to the view
         $results.append($trackHtml);
