@@ -21,7 +21,7 @@ $(document).on('ready', function() {
   var template = Handlebars.compile(source);
 
   // submit form to search spotify API
-  $spotifySearch.on('submit', function (event) {
+  $spotifySearch.on('submit', function handleFormSubmit(event) {
     event.preventDefault();
 
     // empty previous results and show loading gif
@@ -35,8 +35,13 @@ $(document).on('ready', function() {
     var searchUrl = 'https://api.spotify.com/v1/search?type=track&q=' + searchTrack;
 
     // use AJAX to call spotify API
-    $.get(searchUrl, function (data) {
+    $.ajax({
+      url: searchUrl,
+      method: 'GET',
+      success: renderSpotifyData  // use this function as the callback
+    });
 
+    function renderSpotifyData(data) {
       // track results are in an array called `items`
       // which is nested in the `tracks` object
       var trackResults = data.tracks.items;
@@ -50,7 +55,7 @@ $(document).on('ready', function() {
 
       // append html to the view
       $results.append(trackHtml);
-    });
+    }
 
     // reset the form
     $spotifySearch[0].reset();
