@@ -47,25 +47,27 @@ $(document).on('ready', function() {
       alert("Please enter a keyword to search");
     }
 
-    function renderSpotifyData(data) {
-      // track results are in an array called `items`
-      // which is nested in the `tracks` object
-      var trackResults = data.tracks.items;
-      console.log(trackResults);
-
-      // hide loading gif
-      $loading.hide();
-
-      // pass in data to render in the template
-      var trackHtml = template({ tracks: trackResults });
-
-      // append html to the view
-      $results.append(trackHtml);
-    }
-
     // reset the form
     $spotifySearch[0].reset();
     $track.focus();
   });
+
+  
+  function renderSpotifyData(data) {
+    // track results are in an array called `items`
+    // which is nested in the `tracks` object
+    var trackResults = data.tracks.items;
+    console.log(trackResults);
+
+    // hide loading gif
+    $loading.hide();
+
+    // pass in data to render in the template
+    var trackHtml = template({ tracks: trackResults });
+
+    // append html to the view
+    $results.append(trackHtml);
+  }
+
 
 });
