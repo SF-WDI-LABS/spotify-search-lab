@@ -2,6 +2,10 @@
 
 **Objective:** Make a music search app using jQuery, AJAX, and the Spotify API. You'll be using Spotify's search endpoint to search for tracks (songs).
 
+
+![completed app gif](https://cloud.githubusercontent.com/assets/3254910/13960538/f58223c2-f015-11e5-980f-808c627e60ee.gif)
+
+
 ## Minimum Requirements
 
 1. Your app must have a form to search for tracks (songs). This form needs an input field for the search keyword.
