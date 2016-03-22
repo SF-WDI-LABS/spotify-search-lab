@@ -30,42 +30,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <br>
-        <form id="spotify-search">
-          <div class="form-group">
-            <input class="form-control" id="track" placeholder="Song Title" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-block btn-success" value="Search">
-          </div>
-        </form>
-        <div class="text-center" id="loading">
-          <img src="images/loading.gif" width="80">
-        </div>
-        <br>
-        <div id="results">
-
-          <!-- handlebars template -->
-          <script id="tracks-template" type="text/x-handlebars-template">
-            {{#each tracks}}
-              <div class="row">
-                <div class="col-xs-4">
-                  {{#if album.images.[0]}}
-                    <img src="{{album.images.[0].url}}" class="img-responsive">
-                  {{/if}}
-                </div>
-                <div class="col-xs-8">
-                  <p><strong>{{name}}</strong> by {{artists.[0].name}}</p>
-                  <p><a href="{{previewUrl}}" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></span></a></p>
-                </div>
-              </div>
-              <hr>
-            {{else}}
-              <p class="text-center">No results</p>
-            {{/each}}
-          </script>
-
-        </div>
+        <div id="results"></div>
       </div>
     </div>
   </div>
