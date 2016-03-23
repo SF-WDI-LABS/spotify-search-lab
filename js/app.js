@@ -50,15 +50,15 @@ $("form").on("submit", function() {
         var trackResult = data.song.items;
         console.log(trackResult);
 
-        $loading.hide();
+        $loadImages.hide();
 
         if (trackResult.length > 0) {
-            trackResult.forEach(function(result, index) {
+            trackResult.forEach(function(songResult, index) {
                 var trackData = {
-                    albumArt: result.album.images.length > 0 ? result.album.images[0].url : null,
-                    artist: result.artists[0].name,
-                    name: result.name,
-                    previewUrl: result.preview_url
+                    albumArt: songResult.album.images.length > 0 ? songResult.album.images[0].url : null,
+                    artist: songResult.artists[0].name,
+                    name: songResult.name,
+                    previewUrl: songResult.preview_url
                 };
 
                 var $trackHtml = '<div class="row"><div class="col-xs-4">' +
@@ -68,12 +68,12 @@ $("form").on("submit", function() {
                     '" target="_blank" class="btn btn-sm btn-default">Preview ' +
                     '<span class="glyphicon glyphicon-play"></span></a></p></div></div><hr>';
 
-                $results.append($trackHtml);
+                $result.append($trackHtml);
             });
 
             // else let user know there are no results
         } else {
-            $results.append('<p class="text-center">No results</p>');
+            $result.append('<p class="text-center">No results found!</p>');
         }
     }
 });
