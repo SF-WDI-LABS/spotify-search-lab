@@ -1,54 +1,40 @@
-// wait for DOM to load before running JS
-$(document).on('ready', function() {
+console.log('Sanity Check: JS is loaded!');
 
-  // check to make sure JS is loaded
-  console.log('JS is loaded!');
+$(document).ready(function() {
 
-  // form to search spotify API
-  var $spotifySearch = $('#spotify-search');
-
-  // input field for track (song)
-  var $track = $('#track');
-
-  // element to hold results from spotify API
-  var $results = $('#results');
-
-  // loading gif
+  var SPOTIFY_SEARCH_ENDPOINT = 'https://api.spotify.com/v1/search';
+  var $spotifySearchForm = $('form#spotify-search');
+  var $trackInput = $('input#track');
+  var $resultsContainer = $('#results');
   var $loading = $('#loading');
 
   // submit form to search spotify API
-  $spotifySearch.on('submit', function handleFormSubmit(event) {
-    event.preventDefault();
+  $spotifySearchForm.on('submit', function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the HTML form from submitting (its default behavior)
 
-    // empty previous results
-    $results.empty();
 
-    // save form data to variable
-    var searchTrack = $track.val();
+    var query = $trackInput.val();
 
-    // only search if the form had a keyword to search with!
-    if (searchTrack !== ""){
-      // show loading gif
-      $loading.show();
-
-      // spotify search URL
-      var searchUrl = 'https://api.spotify.com/v1/search?type=track&q=' + searchTrack;
-
-      // use AJAX to call spotify API
-      $.ajax({
-        method: 'GET',
-        url: searchUrl,
-        success: handleSpotifyData // see this function defined below
-      });
-    } else {
-      // remind the user to enter a keyword 
-      // one way is a "quick and ugly" alert
+    if (query === "") {
       alert("Enter a keyword to search!");
+      return; // we're done here
     }
 
-    // reset the form
-    $spotifySearch[0].reset();
-    $track.focus();
+    $resultsContainer.empty(); // clear existing results
+    $loading.show(); // show loading gif
+
+    $.ajax({
+      method: 'GET',
+      url: SPOTIFY_SEARCH_ENDPOINT,
+      data: {
+        type: "track",
+        q: query
+      },
+      success: handleSpotifyData // see this function defined below
+    });
+
+    $spotifySearchForm[0].reset(); // clear the form fields
+    $trackInput.focus();  // return cursor/focus to input field
   });
 
 
@@ -60,39 +46,47 @@ $(document).on('ready', function() {
     var trackResults = data.tracks.items;
     console.log(trackResults);
 
-    // hide loading gif
-    $loading.hide();
+    $loading.hide(); // hide loading gif
 
-    // only append results if there are any
-    if (trackResults.length > 0) {
-
-      // iterate through results
-      trackResults.forEach(function (result, index) {
-
-        // build object of data we want in our view
-        var trackData = {
-          albumArt: result.album.images.length > 0 ? result.album.images[0].url : null,
-          artist: result.artists[0].name,
-          name: result.name,
-          previewUrl: result.preview_url
-        };
-
-        // use data to construct HTML we want to show
-        var $trackHtml = '<div class="row"><div class="col-xs-4">' + 
-          '<img src="' + trackData.albumArt + '" class="img-responsive"></div>' + 
-          '<div class="col-xs-8"><p><strong>' + trackData.name + '</strong> by ' + 
-          trackData.artist + '</p><p><a href="' + trackData.previewUrl + 
-          '" target="_blank" class="btn btn-sm btn-default">Preview ' +
-          '<span class="glyphicon glyphicon-play"></span></a></p></div></div><hr>';
-
-        // append HTML to the view
-        $results.append($trackHtml);
-      });
-
-    // else let user know there are no results
-    } else {
-      $results.append('<p class="text-center">No results</p>');
+    if (!trackResults.length) {
+      // Our search came up empty
+      $resultsContainer.append('<p class="text-center">No results</p>');
+      return; // we're done here
     }
+
+    // okay, we got some results back. Let's loop over them.
+    var resultsHtml = trackResults.map(function (result, index) {
+
+      // build object of data we want in our view
+      var trackData = {
+        albumArt: result.album.images.length > 0 ? result.album.images[0].url : null,
+        artist: result.artists[0].name,
+        name: result.name,
+        previewUrl: result.preview_url
+      };
+
+      // use data to construct HTML we want to show
+      return (`
+        <div class="row">
+          <div class="col-xs-4">
+            <img src="${trackData.albumArt}" class="img-responsive">
+          </div>
+          <div class="col-xs-8">
+            <p><strong> ${trackData.name}</strong> by ${trackData.artist}</p>
+            <p>
+              <a href="${trackData.previewUrl}" target="_blank" class="btn btn-sm btn-default">
+                Preview <span class="glyphicon glyphicon-play"></span>
+              </a>
+            </p>
+          </div>
+        </div>
+        <hr>
+      `);
+
+    });
+
+    // insert the new HTML into the view
+    $resultsContainer.html(resultsHtml);
   }
 
 
