@@ -1,7 +1,7 @@
 /* put custom styles in this file */
 body {
-  padding-top: 147px;
-  background-color: #eee;
+  padding-top: 175px;
+  background-color: rgba(0, 0, 0, 0.91);
 }
 
 .img-container{
@@ -26,10 +26,16 @@ h3, h4 {
   border: 1px solid black;
   margin: 5px;
   padding: 0;
-  background-color: white;
+  color: white;
+  background-color: rgba(50,50,50, 0.91);
 }
 
 form {
+  text-align: center;;
+}
+
+input {
+  color: black;
   text-align: center;
 }
 
@@ -53,7 +59,17 @@ h4 small {
     margin-right: auto;
     max-height: 400px;
  }
+
+.navbar {
+  text-align: right;
+  background-color: black;
+  color: white;
+  padding-bottom: 15px;
 }
 
+#logo {
+  display: inline-block;
+  max-height: 150px;
+}
 /*font-family: 'Oswald', sans-serif;
 font-family: 'Raleway', sans-serif;*/
