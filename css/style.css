@@ -2,11 +2,25 @@
 .album:hover{
 	cursor: pointer;
 }
-div.col-md-4:hover{
-}
-#result{
+.result{
 	margin-bottom: 80px;
 }
 .red{
 	color: red;
+}
+input{
+	margin-top: 20px;
+}
+#results{
+	margin-top: 40px;
+}
+input[type=submit]{
+	color: white;
+	background-color: green;
+}
+.form-control{
+	border-radius: 10px;
+}
+.tracks{
+	height: 80px;
 }

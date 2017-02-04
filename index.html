@@ -28,16 +28,15 @@
     <div class="row">
       <div class="col-md-12">
         <h1 class="text-center">Spotify Search</h1>
-        <form>
-          <input type="text" name="q" placeholder="Search Spotify">
+        <form class="col-md-6 col-md-offset-3">
           <select>
             <option value="track">Track</option>
             <option value="album">Album</option>
           </select>
-          <input type="submit" value="SEARCH">
+          <input type="text" name="q" placeholder="Search Spotify" class="form-control">
+          <input type="submit" value="SEARCH" class="form-control">
         </form>
         <div id="results" class="col-md-12">
-          <iframe src="https://embed.spotify.com/?uri=spotify:album:7gsWAHLeT0w7es6FofOXk1" width="300" height="300" frameborder="0" allowtransparency="true"></iframe>
         </div>
       </div>
     </div>
