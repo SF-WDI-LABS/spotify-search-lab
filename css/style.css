@@ -1,1 +1,51 @@
 /* put custom styles in this file */
+.img-container{
+  max-height: 200px;
+  display: inline-block;
+  padding: 0;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+
+h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 0;
+}
+
+form {
+  text-align: center;
+}
+
+p {
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 5px;
+}
+
+h4 small {
+  font-size: 90%;
+}
+
+.pager {
+  margin-bottom: 0;
+}
+
+#loading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+}
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Raleway', sans-serif;*/
