@@ -25,23 +25,23 @@
 </head>
 <body>
   <div class="container">
-    <div class="search">
-      <h1 class="text-center">Spotify Search</h1>
-      <form class="search-field" action="index.html" method="GET">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span><input type="text" name="q">
-        <input type="submit" name="search">
-      </form>
-      <div class="col-xs-4 col-xs-offset-4">
-        <nav aria-label="navigation" style="display: none">
-          <ul class="pager">
-            <li><a id="previous">Previous</a></li>
-            <li><a id="next">Next</a></li>
-          </ul>
-        </nav>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <h1 class="text-center">Spotify Track Search</h1>
+        <form class="search-field" action="index.html" method="GET">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span><input type="text" name="q">
+          <!-- <input type="submit" name="search"> -->
+        </form>
+        <div class="col-xs-4 col-xs-offset-4">
+          <nav aria-label="navigation" style="display: none">
+            <ul class="pager">
+              <li><a id="previous">Previous</a></li>
+              <li><a id="next">Next</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12">
-      <hr>
+    </nav>
     </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">

@@ -41,9 +41,9 @@ $(document).on('ready', function() {
       noResults();
     } else {
       for (i=0; i<results.tracks.items.length; i++){
-        albumInfo = `<div class="col-xs-4"><h3>Artist:</h3><p class="lead"> ${results.tracks.items[i].artists[0].name}</p><br><h4>Title:</h4><p>${results.tracks.items[i].name}</p></div>`
+        albumInfo = `<div class="col-xs-6"><h3>Artist:</h3><p class="lead"> ${results.tracks.items[i].artists[0].name}</p><br><h4>Title:</h4><p>${results.tracks.items[i].name}</p></div>`
         imageInfo = ''
-        play = `<div class="col-xs-8"><iframe src="https://embed.spotify.com/?uri=spotify:track:${results.tracks.items[i].id}" height="80" frameborder="0" allowtransparency="true"></iframe></div>`
+        play = `<div class="col-xs-6"><iframe src="https://embed.spotify.com/?uri=spotify:track:${results.tracks.items[i].id}" height="80" frameborder="0" allowtransparency="true"></iframe></div>`
         // if(results.tracks.items[i].album.images.length > 0){
         //   imageInfo = `<div class="img-container col-xs-4"><img class="img-responsive" src=${results.tracks.items[i].album.images[0].url}></div>`;
         // }

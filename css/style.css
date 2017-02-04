@@ -1,4 +1,9 @@
 /* put custom styles in this file */
+body {
+  padding-top: 147px;
+  background-color: #eee;
+}
+
 .img-container{
   max-height: 200px;
   display: inline-block;
@@ -21,6 +26,7 @@ h3, h4 {
   border: 1px solid black;
   margin: 5px;
   padding: 0;
+  background-color: white;
 }
 
 form {
@@ -45,7 +51,9 @@ h4 small {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-height: 400px;
  }
 }
+
 /*font-family: 'Oswald', sans-serif;
 font-family: 'Raleway', sans-serif;*/
