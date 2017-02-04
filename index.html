@@ -24,10 +24,21 @@
 </head>
 <body>
   <div class="container">
+  <p id="player"></p>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-12">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form>
+          <input type="text" name="q" placeholder="Search Spotify">
+          <select>
+            <option value="track">Track</option>
+            <option value="album">Album</option>
+          </select>
+          <input type="submit" value="SEARCH">
+        </form>
+        <div id="results" class="col-md-12">
+          <iframe src="https://embed.spotify.com/?uri=spotify:album:7gsWAHLeT0w7es6FofOXk1" width="300" height="300" frameborder="0" allowtransparency="true"></iframe>
+        </div>
       </div>
     </div>
   </div>

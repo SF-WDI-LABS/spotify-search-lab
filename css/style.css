@@ -1,1 +1,12 @@
 /* put custom styles in this file */
+.album:hover{
+	cursor: pointer;
+}
+div.col-md-4:hover{
+}
+#result{
+	margin-bottom: 80px;
+}
+.red{
+	color: red;
+}
