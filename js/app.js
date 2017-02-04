@@ -1,9 +1,20 @@
-// wait for DOM to load before running JS
+var endpoint = 'https://api.spotify.com/v1/search?type=track&q=' + ($('#track').val());
+
 $(document).on('ready', function() {
 
-  // check to make sure JS is loaded
-  console.log('JS is loaded!');
+  var spotifySearch = $('#spotify-search');
+  var results = $('#results');
 
-  // your code here
+  
+   $.ajax({
+     method: 'GET',
+     url: endpoint,
+     data: $("form").serialize(),
+     success: onSuccess,
+   });
 
 });
+
+function onSuccess(data) {
+  console.log(data);
+}
