@@ -8,15 +8,16 @@ $(document).on('ready', function() {
 
   $.ajax ({
     method: 'GET',
-    url: 'https://api.spotify.com/search/'
+    url: "https://api.spotify.com/v1/search?q=hello&type=track"
     data: $("form").serialize(),
     success: onSuccess,
     error: onError
     });
   });
 
-  onSucess(){
-
+  function onSucess(data){
+    console.log("received data:", data);
+    console.log(data.tracks.items);
   };
 
   function onError(xhr, status, errorThrown) {
