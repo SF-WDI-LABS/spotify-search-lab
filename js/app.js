@@ -16,7 +16,7 @@ $(document).on('ready', function() {
     	albums.map(function(album){
     		var uri = album.uri
     		$('#results').append(`
-    			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" id="result">	
+    			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 result">	
     				<iframe src="https://embed.spotify.com/?uri=${uri}&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
     			</div>
     		`)
@@ -28,20 +28,51 @@ $(document).on('ready', function() {
 	  	var tracks = json.tracks.items
 	  	$('#results').html("");
 	  	$('#player').html('');
-	  	tracks.map(function(track){
+	  	var songs = [];
+	  	console.log(tracks.length)
+	  	tracks.map(function(track, index){
 	  		var cover = track.album.images[1].url;
 	  		var audio = track.preview_url;
 	  		var artist = track.artists[0].name;
 	  		var title = track.name;
-	  		$('#results').append(`
-				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 result">
-					<h4> ${title} </h4>
-					<h4><small> ${artist} </small></h4>
-					<img src="${cover}" id="${audio}" class="album">
-	  			</div>
-	  		`)
+	  		var $div = $(`<div class="col-xs-7 col-sm-4 col-md-4 col-lg-4 result">
+				 				<h4> ${title} </h4>
+				 				<h4><small> ${artist} </small></h4>
+								<img src="${cover}" id="${audio}" class="album">
+	  						</div>`)
+			if(index%3 === 2 && index !== tracks.length -1){
+				songs.push($div);
+	  			var row = $("<div class='row'></div>");
+	  			for(var i=0; i<3; i++){
+	  				row.append(songs[i]);
+	  			}
+				console.log("Last item in row. row:", row);
+				$("#results").append(row);
+				songs = [];
+			}
+			else if(index === tracks.length - 1){
+				songs.push($div);
+				var row = $("<div class='row'></div>");
+	  			for(var i=0; i<3; i++){
+	  				row.append(songs[i]);
+	  			}
+				$("#results").append(row);
+				console.log("Last");
+			}
+			else{
+				songs.push($div);
+				console.log('Add to row')
+			}
 	  	})
-	  	$('#results img').on('click', function(){
+
+	  	// 	$('#results').append(`
+				// <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 result">
+				// 	<h4> ${title} </h4>
+				// 	<h4><small> ${artist} </small></h4>
+				// 	<img src="${cover}" id="${audio}" class="album">
+	  	// 		</div>
+	  	// 	`)
+	  	$('.result img').on('click', function(){
 			var track = $(this).attr('id');
 			$('#player').html(`
 				<audio autoplay src="${track}">
