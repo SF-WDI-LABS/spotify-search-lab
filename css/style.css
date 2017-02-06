@@ -1,1 +1,41 @@
 /* put custom styles in this file */
+
+body {
+  background-image: url('stardust.png');
+}
+
+label {
+  display: block;
+}
+
+li {
+  background-image: url('wov.png');
+  padding: 10px;
+  text-align: justify;
+  font-family: Arial, sans-serif;
+  color: #393a3a;
+}
+
+img {
+  max-height : 50px;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 50px;
+  font-family: 'Luckiest Guy', sans-serif;
+  color: #588c48;
+  text-shadow: 2px 2px black;
+}
+
+.hidden-search-box {
+  visibility: hidden;
+}
+
+.search-box {
+  width: auto;
+}
+
+.search-btn {
+  border-radius: 4px;
+}

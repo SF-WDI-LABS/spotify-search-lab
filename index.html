@@ -13,6 +13,7 @@
 
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Codystar|Luckiest+Guy" rel="stylesheet">
 
   <!-- jquery -->
   <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
@@ -22,12 +23,20 @@
   <script type="text/javascript" src="js/app.js"></script>
 
 </head>
+
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
+        <h1 class="page-header text-center">S e a r c h i f y</h1>
+        <form class="" action="submit" method="post">
+          <label for="search-box">Search Spotify Here...</label>
+          <input class="search-box panel" type="text" name="q" placeholder="enter a song">
+          <input class="search-btn btn-danger" type="submit" name="searchify-btn" value="Searchify">
+          <input class="hidden-search-box panel" type="text" name="type" value="track">
+        </form>
         <div id="results"></div>
+
       </div>
     </div>
   </div>
