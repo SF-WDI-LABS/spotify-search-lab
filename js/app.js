@@ -19,11 +19,11 @@ function getTrack(){}
     success: onSuccess,
     error: onError
   });
-}
+})
 
   function onSuccess(json) {
     console.log(json);
-    $(".form-track-input")
+    $(".form-track-input").append()
   }
 
   function onError(xhr, status, errorThrown) {
