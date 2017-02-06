@@ -11,7 +11,7 @@ var query;
 	$("form").on("submit", function handleSubmit(event) {
 		event.preventDefault();
 		query = $("input#track").val();
-		console.log(query);
+		// console.log(query);
 	})
 
 
@@ -27,8 +27,7 @@ var query;
   		$.ajax({
   			method: "GET",
   			url: "https://api.spotify.com/v1/search",
-  			data: 
-  			
+  			data:
   			{
   				type: "track",
   				q: query
