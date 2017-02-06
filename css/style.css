@@ -1,1 +1,9 @@
 /* put custom styles in this file */
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.btn-success {
+	margin-top: 13px;
+}
