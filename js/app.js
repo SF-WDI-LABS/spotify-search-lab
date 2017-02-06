@@ -6,12 +6,15 @@ $(document).on('ready', function() {
 
   // your code here
 
+  	
 
   	// when form submits, prevents submitting
-	$("form").on("submit", function handleSubmit(event) {
+	$("input").on("submit", function handleSubmit(event) {
 		event.preventDefault();
 	})
 
+	// empty results section
+	$("#results").empty();
 
 	// get Spotify data using ajax
 	getData();
@@ -20,11 +23,12 @@ $(document).on('ready', function() {
   		$.ajax({
   			method: "GET",
   			url: "https://api.spotify.com/v1/search",
-  			data: $("form").serialize()
-  			// {
-  			// 	type: "track",
-  			// 	q: $("input#track").val()
-  			// }
+  			data: 
+  			// $("form").serialize()
+  			{
+  				type: "track",
+  				q: $("input#track").val()
+  			}
   			,
   			success: onSuccess,
 
@@ -33,13 +37,25 @@ $(document).on('ready', function() {
   			function onSuccess(responseData) {
   				
   				var tracksData = responseData.tracks.items;
-  				console.log("tracksData");
+  				console.log(tracksData);
 
-  				return (`<div><p>Track: ${tracks.items[0].name} Artist: ${tracks.items[0].artists[0].name}</p></div>`);
+  				// loop over data
+  				tracksData.forEach(function(result, idx) {
+  					
+  					var dataWeWant = {
+  						artist: tracksData.artists[0].name,
+  						name: tracksData.name
+  					};
 
-  			}
+  				var results = (`<div><p>Track: ${tracksData.name} Artist: ${tracksData.artists[0].name}</p></div>`);
+
+  				$("#results").append(results);
+
+  			});
 
 	  }
+
+	}
 	
 });
 
