@@ -1,1 +1,8 @@
+
 /* put custom styles in this file */
+
+img {
+	height: 150px;
+	width: 150px;
+	margin-bottom: 20px;
+}
