@@ -9,7 +9,6 @@ $(document).ready(function() {
   spotifySearch.on('submit', function handleSubmit(event) {
     event.preventDefault();
 
-
     var q = trackInput.val();
 
     if (q === "") {
