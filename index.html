@@ -27,6 +27,11 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
+        <form method="GET">
+          <input type="text" class="form-track-input" name="q" value="">
+          <input name="type" value="track" hidden>
+          <input type="submit" value="Search">
+        </form>
         <div id="results"></div>
       </div>
     </div>
