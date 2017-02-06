@@ -1,1 +1,37 @@
 /* put custom styles in this file */
+.album:hover{
+	cursor: pointer;
+}
+.album{
+	height: 100%;
+	width: 100%;
+}
+.result{
+	margin-bottom: 60px;
+}
+.red{
+	color: red;
+}
+input{
+	margin-top: 20px;
+}
+#results{
+	margin-top: 40px;
+}
+input[type=submit]{
+	color: white;
+	background-color: green;
+}
+.form-control{
+	border-radius: 10px;
+}
+.tracks{
+	height: 80px;
+}
+div.row{
+	display: inline;
+}
+body{
+	background-size: 100% 100%
+	background: fixed;
+}

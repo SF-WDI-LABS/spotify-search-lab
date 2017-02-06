@@ -24,10 +24,20 @@
 </head>
 <body>
   <div class="container">
+  <p id="player"></p>
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-12">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form class="col-md-6 col-md-offset-3">
+          <select>
+            <option value="track">Track</option>
+            <option value="album">Album</option>
+          </select>
+          <input type="text" name="q" placeholder="Search Spotify" class="form-control">
+          <input type="submit" value="SEARCH" class="form-control">
+        </form>
+        <div id="results" class="col-md-12">
+        </div>
       </div>
     </div>
   </div>
