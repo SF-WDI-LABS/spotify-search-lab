@@ -6,28 +6,36 @@ $(document).on('ready', function() {
 
   // your code here
 
+
+  	// when form submits, prevents submitting
 	$("form").on("submit", function handleSubmit(event) {
 		event.preventDefault();
 	})
 
+
+	// get Spotify data using ajax
 	getData();
 
 	  function getData() {
   		$.ajax({
   			method: "GET",
   			url: "https://api.spotify.com/v1/search",
-  			data: {
-  				type: "track",
-  				q: $("input#track").val()
-  			},
+  			data: $("form").serialize()
+  			// {
+  			// 	type: "track",
+  			// 	q: $("input#track").val()
+  			// }
+  			,
   			success: onSuccess,
 
   		})
-
+  			// runs when ajax sucessfully gets data from spotify api
   			function onSuccess(responseData) {
-  				console.log("received")
-
+  				
   				var tracksData = responseData.tracks.items;
+  				console.log("tracksData");
+
+  				return (`<div><p>Track: ${tracks.items[0].name} Artist: ${tracks.items[0].artists[0].name}</p></div>`);
 
   			}
 
