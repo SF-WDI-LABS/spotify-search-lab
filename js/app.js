@@ -14,11 +14,35 @@ $spotifyForm.submit (function handleSubmit(event) {
 
   var info = $trackIn.val();
 
-  
+  if (info === "") {
+    alert("Dude! You gotta put something in the search field!");
+    return;
+  }
 
+  $resultsList.empty();
 
+  $.ajax({
+    method: "GET",
+    url: spotifySearchUrl,
+    data: {
+      type: "track",
+      q: "query"
+    },
+    success: handleSpotifyOutput
+    });
 
+  $spotifyForm.empty();
   });
+
+var handleSpotifyOutput = function(data) {
+  console.log("data check", data);
+  resultTracker = data.tracks.items;
+
+  if (!resultTracker.length) {
+    $resultsList.append('<p class="text-center">No results</p>');
+    return;
+  };
+};
   // your code here
 
 });
