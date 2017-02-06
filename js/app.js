@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	$form.submit(function (event) {
 		event.preventDefault();
-
+		$("#results").empty();
 		$.ajax({
 			method: "GET",
 			url: endpoint,
@@ -29,22 +29,44 @@ $(document).ready(function() {
 			var responseArr = response.tracks.items;
 			var trackname;
 			var artist1;
-			var artist2;
+			// var artist2;
+			var albumArt;
+			var preview;
 
-			responseArr.forEach(function(item, i, responseArr){
+			responseArr.forEach(function(item){
 				trackname = item.name;
 				artist1 = item.artists[0].name;
-				if (item.artists.length > 1) {
-					artist2 = item.artists[1].name;
-					console.log(trackname + " by " + artist1 + " and " + artist2);
-				}
+				preview = item.preview_url;
 				
-					console.log(trackname + " by " + artist1);
+				console.log(trackname + " by " + artist1);
+
+				// if (item.artists.length > 1) {
+				// 	artist2 = item.artists[1].name;
+				// 	console.log(trackname + " by " + artist1 + " and " + artist2);
+				// }
+				
+				if(item.album.images.length > 0) {
+					albumArt = item.album.images[0].url;
+					// $("#results").append(`<img src="${albumArt}"><a href="${preview}" target="_blank">Preview</a>`)
+				}
+				$("#results").append(`<div class="row track">
+				<div class="col-xs-4">
+					<img src="${albumArt}" class="img-responsive"/>
+				</div>
+				<div class="col-xs-8">
+					<p>By ${artist1}</p>
+					<a href="${preview}" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></a>
+				</div>
+			</di>`);
+
 			})
 
+			 
+	
 
 
 		}
+
 	});
 
 

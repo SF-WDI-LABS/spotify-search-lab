@@ -5,5 +5,9 @@ h1 {
 }
 
 .btn-success {
-	margin-top: 13px;
+	margin: 20px 0;
+}
+
+.track {
+	margin: 10px 0;
 }
