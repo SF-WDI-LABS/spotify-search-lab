@@ -8,11 +8,25 @@ $(document).ready(function() {
 	var endpoint = "https://api.spotify.com/v1/search"
 	var $search = $("input#search");
 	var $form = $("#spotify-track-search");
+	var $track = $("input#track");
 
 
 	$form.submit(function (event) {
 		event.preventDefault();
-		console.log(event.isDefaultPrevented());
+
+		$.ajax({
+			method: "GET",
+			url: endpoint,
+			data: {
+				q: $track.val(),
+				type: "track"
+			},
+			success: getTracks
+		})
+
+		function getTracks(response) {
+			console.log(response);
+		}
 	});
 
 
