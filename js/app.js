@@ -25,11 +25,21 @@ $(document).ready(function() {
 		})
 
 		function getTracks(response) {
-			console.log(response.tracks.items[0].name);
+
 			var responseArr = response.tracks.items;
+			var trackname;
+			var artist1;
+			var artist2;
 
 			responseArr.forEach(function(item, i, responseArr){
-				console.log(item.name)
+				trackname = item.name;
+				artist1 = item.artists[0].name;
+				if (item.artists.length > 1) {
+					artist2 = item.artists[1].name;
+					console.log(trackname + " by " + artist1 + " and " + artist2);
+				}
+				
+					console.log(trackname + " by " + artist1);
 			})
 
 
