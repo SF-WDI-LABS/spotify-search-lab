@@ -6,20 +6,23 @@ $(document).on('ready', function() {
 
   // your code here
 
-  	var query = $("input#track").val();
-
+var query;
   	// when form submits, prevents submitting
-	$("input#submit").on("submit", function handleSubmit(event) {
+	$("form").on("submit", function handleSubmit(event) {
 		event.preventDefault();
+		query = $("input#track").val();
+		console.log(query);
 	})
 
-	// empty results section
+
+
+	// empty results section 
 	$("#results").empty();
 
 	// get Spotify data using ajax
-	getData();
+	getData(query);
 
-	  function getData() {
+	  function getData(query) {
 	  	console.log(query);
   		$.ajax({
   			method: "GET",
@@ -28,7 +31,7 @@ $(document).on('ready', function() {
   			
   			{
   				type: "track",
-  				q: "hello"
+  				q: query
   			}
   			,
   			success: onSuccess,
