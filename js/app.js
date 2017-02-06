@@ -1,23 +1,28 @@
 $(document).on('ready', function() {
 
 
-  //This variable tracks the offset for the previous and next buttons.
+  //This variable tracks the offset and formData for each submission.
   var offset=0;
+  var formData;
 
-  //Get the query from the form and start ajax.
-  $('form').on('submit', function(event){
-    offset = 0;
-    loading();
-    event.preventDefault();
-    var formData = $('form').serialize() + '&type=track&offset=' + offset;
+  function submission(){
     $.ajax({
       method: 'GET',
       url: "https://api.spotify.com/v1/search",
-      data: formData,
+      data: formData + offset,
       dataType: 'json',
       success: searchResults,
       error: errorMessage,
     })
+  }
+
+  //Get the query from the form and start ajax.
+  $('form').on('submit', function retrieval(event){
+    offset=0;
+    loading();
+    event.preventDefault();
+    formData = $(this).serialize() + '&type=track&offset=';
+    submission();
     $('nav').css('display', '');
   });
 
@@ -72,29 +77,15 @@ $(document).on('ready', function() {
     if(offset>=20){
       offset-=20;
     };
-    var formData = $('form').serialize() + '&type=track&offset=' + offset;
     loading();
-    $.ajax({
-      method: 'GET',
-      url: "https://api.spotify.com/v1/search",
-      data: formData,
-      dataType: 'json',
-      success: searchResults
-    })
+    submission();
   });
 
 
   //Controls the next botton and recalls AJAX with a larger offset.
   $('#next').on('click', function(event){
     offset+=20;
-    var formData = $('form').serialize() + '&type=track&offset=' + offset;
     loading();
-    $.ajax({
-      method: 'GET',
-      url: "https://api.spotify.com/v1/search",
-      data: formData,
-      dataType: 'json',
-      success: searchResults
-    })
+    submission();
   });
 });
