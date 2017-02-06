@@ -1,1 +1,21 @@
 /* put custom styles in this file */
+
+h1 {
+	margin-bottom: 20px;
+}
+
+.btn-success {
+	margin: 20px 0;
+}
+
+.track {
+	margin: 10px 0;
+}
+
+p span {
+	font-weight: bold;
+}
+
+.gif {
+	width: 70px;
+}
