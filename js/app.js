@@ -25,7 +25,15 @@ $(document).ready(function() {
 		})
 
 		function getTracks(response) {
-			console.log(response);
+			console.log(response.tracks.items[0].name);
+			var responseArr = response.tracks.items;
+
+			responseArr.forEach(function(item, i, responseArr){
+				console.log(item.name)
+			})
+
+
+
 		}
 	});
 
