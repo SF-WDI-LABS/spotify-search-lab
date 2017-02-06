@@ -6,10 +6,10 @@ $(document).on('ready', function() {
 
   // your code here
 
-  	
+  	var query = $("input#track").val();
 
   	// when form submits, prevents submitting
-	$("input").on("submit", function handleSubmit(event) {
+	$("input#submit").on("submit", function handleSubmit(event) {
 		event.preventDefault();
 	})
 
@@ -20,14 +20,15 @@ $(document).on('ready', function() {
 	getData();
 
 	  function getData() {
+	  	console.log(query);
   		$.ajax({
   			method: "GET",
   			url: "https://api.spotify.com/v1/search",
   			data: 
-  			// $("form").serialize()
+  			
   			{
   				type: "track",
-  				q: $("input#track").val()
+  				q: "hello"
   			}
   			,
   			success: onSuccess,
@@ -43,11 +44,11 @@ $(document).on('ready', function() {
   				tracksData.forEach(function(result, idx) {
   					
   					var dataWeWant = {
-  						artist: tracksData.artists[0].name,
-  						name: tracksData.name
+  						artist: result.artists[0].name,
+  						name: result.name
   					};
 
-  				var results = (`<div><p>Track: ${tracksData.name} Artist: ${tracksData.artists[0].name}</p></div>`);
+  				var results = (`<div><p>Track: ${dataWeWant.name} Artist: ${dataWeWant.artist}</p></div>`);
 
   				$("#results").append(results);
 
