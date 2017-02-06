@@ -1,1 +1,9 @@
 /* put custom styles in this file */
+img{
+	height: 20em;
+	width: 20em;
+}
+
+input{
+	margin: 5px;
+}
