@@ -21,7 +21,7 @@ $(document).ready(function() {
     var query = $trackInput.val();
 
     $.ajax ({
-      method: 'GET',
+      method: "GET",
       url: "https://api.spotify.com/v1/search/",
       data: $("form").serialize(),
       data: {
@@ -46,17 +46,6 @@ $(document).ready(function() {
     };
   }
 
-  var resultsHtml = trackResults.map(function (result, index) {
-
-    // build object of data we want in our view
-    var trackData = {
-      albumArt: result.album.images.length > 0 ? result.album.images[0].url : null,
-      artist: result.artists[0].name,
-      name: result.name,
-      previewUrl: result.preview_url
-    };
-
-  });
 
   function onError(xhr, status, errorThrown) {
     alert("Sorry, there was a problem!");
