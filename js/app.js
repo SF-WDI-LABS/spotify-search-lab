@@ -5,12 +5,23 @@ $(document).on('ready', function() {
   console.log('JS is loaded!');
 
   // your code here
-  $('#ajax').submit(function startSubmit(){
+  $('form').submit(function (event){
+    event.preventDefault();
     $.ajax ({
-      url: ,
-      data: ,
+      url: "https://api.spotify.com/v1/search",
+      data: $(this).serialize(),
       success: onSuccess,
-      error: onError
-    })
-  })
+      // error: onError
+    });
+
+    function onSuccess(response) {
+      var trackList = response.tracks.items;
+      trackList.forEach(function(song, idx) {
+        var artistName = song.artists[0].name;
+        var songName = song.name;
+        console.log(artistName, songName);
+        $('#results').append(`<p>${songName} by ${artistName}</p>`);
+      });
+    }
+  });
 });
