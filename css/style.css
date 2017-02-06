@@ -1,1 +1,40 @@
 /* put custom styles in this file */
+
+.result {
+  text-align: center;
+  margin:20px auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.result img {
+  width:200px;
+  height:200px;
+  margin: 5px auto;
+  display:block;
+}
+form {
+    margin:10px auto;
+}
+
+#search{
+  color: white;
+  background:#1ED760;
+  width:80%;
+  margin:10px 10%;
+}
+
+#input{
+  width:80%;
+  display: block;
+  margin:10px auto;
+
+}
+
+#results{
+  position:fixed;
+  overflow-y:scroll;
+  height:100%;
+  margin: 10px 5%;
+
+}
