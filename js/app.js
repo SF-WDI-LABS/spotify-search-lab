@@ -6,16 +6,22 @@ $(document).on('ready', function() {
 
   // your code here
 
+
+  var $trackInput = $("input.search-text-input");
+  var query = $trackInput.val();
+
   $.ajax ({
     method: 'GET',
-    url: "https://api.spotify.com/v1/search?q=hello&type=track"
-    data: $("form").serialize(),
+    url: "https://api.spotify.com/v1/search",
+    data: {
+      type: "track",
+      q: query
+    },
     success: onSuccess,
     error: onError
     });
-  });
 
-  function onSucess(data){
+  function onSuccess(data){
     console.log("received data:", data);
     console.log(data.tracks.items);
   };
