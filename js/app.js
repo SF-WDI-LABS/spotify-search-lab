@@ -27,7 +27,7 @@ $(document).ready(function() {
       });
     }
 
-    $spotifySearchForm[0].reset();
+    $spotifySearchForm[0].reset(); // resets the search form after entering input
     $track.focus(); // have the cursor display on the input area
 
   });
@@ -38,24 +38,40 @@ $(document).ready(function() {
     console.log(trackResults);
 
     if (trackResults.length > 0) {
-      trackResults.forEach(function (result, index) {
 
+      // loop over each result
+      trackResults.forEach(function (result, index) {
+        // create object of song data
         var trackData = {
           artist: result.artists[0].name,
           name: result.name,
+          albumArt: result.album.images.length > 0 ? result.album.images[1].url : null,
+          albumName: result.album.name,
+          previewUrl: result.preview_url
         };
-
+        // use data to build results in HTML
         var $resultstoDisplay = `
+                <br>
                 <div class="row">
-                  <div class="col-xs-8">
+                  <div class="col-xs-4">
+                    <img src="${trackData.albumArt}" class="img-responsive">
+                  </div>
+                  <div class="col-sm-8">
                     <p><strong> ${trackData.name}</strong> by ${trackData.artist}</p>
+                    <p> <strong>Album:</strong> ${trackData.albumName}</p>
+                    <p>
+                      <a href="${trackData.previewUrl}" target="_blank" class="btn btn-sm btn-default">
+                        Preview <span class="glyphicon glyphicon-play"></span>
+                      </a>
+                    </p>
                   </div>
                 </div>
-                <hr>
+                <br>
               `;
+              // append results in HTML to the specific container
               $results.append($resultstoDisplay);
         });
-    } else {
+    } else {  // if there are no results, display this
         $results.append('<p class="text-center">No results</p>');
       }
     }
