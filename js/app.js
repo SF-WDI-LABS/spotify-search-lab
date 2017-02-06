@@ -6,22 +6,26 @@ $(document).on('ready', function() {
 
   // your code here
   $('form').submit(function (event){
+    $('#results').html("");
     event.preventDefault();
     $.ajax ({
       url: "https://api.spotify.com/v1/search",
       data: $(this).serialize(),
       success: onSuccess,
-      // error: onError
     });
 
     function onSuccess(response) {
       var trackList = response.tracks.items;
-      trackList.forEach(function(song, idx) {
-        var artistName = song.artists[0].name;
-        var songName = song.name;
-        console.log(artistName, songName);
-        $('#results').append(`<p>${songName} by ${artistName}</p>`);
-      });
+      if (response.tracks.total === 0) {
+        alert('That search returned 0 results. Try again');
+      } else {
+        trackList.forEach(function(song, idx) {
+          var artistName = song.artists[0].name;
+          var songName = song.name;
+          console.log(artistName, songName);
+          $('#results').append(`<p>${songName} by ${artistName}</p>`);
+        });
+      }
     }
   });
 });
