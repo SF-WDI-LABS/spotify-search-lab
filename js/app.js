@@ -24,7 +24,7 @@ $(document).on('ready', function() {
       url: spotifySearchUrl,
       data: {
         type: "track",
-        q: "query"
+        q: info
       },
       success: handleSpotifyOutput
     });
