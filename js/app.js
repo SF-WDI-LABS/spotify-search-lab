@@ -5,5 +5,12 @@ $(document).on('ready', function() {
   console.log('JS is loaded!');
 
   // your code here
-
+  $('#ajax').submit(function startSubmit(){
+    $.ajax ({
+      url: ,
+      data: ,
+      success: onSuccess,
+      error: onError
+    })
+  })
 });
