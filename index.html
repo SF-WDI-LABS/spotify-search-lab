@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
 
-  <!-- set viewport to device width to help make site responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
 
-  <title>Spotify Search</title>
+        <!-- set viewport to device width to help make site responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- bootstrap css -->
-  <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <title>Spotify Search</title>
 
-  <!-- custom styles -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- bootstrap css -->
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-  <!-- jquery -->
-  <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+        <!-- custom styles -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <!-- custom script -->
-  <script type="text/javascript" src="js/app.js"></script>
+        <!-- jquery -->
+        <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
-      </div>
-    </div>
-  </div>
-</body>
+        <!-- custom script -->
+        <script type="text/javascript" src="js/app.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <h1 class="text-center">Spotify Search</h1>
+                    <form id="spotify-search">
+                        <div class="form-group">
+                            <input class="form-control" id="track" placeholder="Song Title">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-lg btn-info" value="search">
+                        </div>
+                    </form>
+                    <div id="results"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+
 </html>
