@@ -1,1 +1,59 @@
 /* put custom styles in this file */
+
+body {
+  background-image: url('stardust.png');
+}
+
+label {
+  display: block;
+}
+
+li {
+  padding: 10px;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  color: #393a3a;
+}
+
+img {
+  max-height : 50px;
+  margin: 10px;
+}
+
+footer {
+  color: #a8a8a8;
+  border-radius: 25px;
+  background: #212121;
+  position: relative;
+  left:0px;
+  bottom:0px;
+  height:20px;
+  width:80%;
+  margin: auto;
+}
+
+h4, .page-header{
+  color: #588c48;
+  text-shadow: 2px 2px black;
+}
+
+li, .jumbotron {
+  background-image: url('wov.png');
+}
+
+.page-header {
+  font-size: 50px;
+  font-family: 'Luckiest Guy', sans-serif;
+}
+
+.hidden-search-box {
+  visibility: hidden;
+}
+
+.search-box {
+  width: auto;
+}
+
+.search-btn {
+  border-radius: 4px;
+}
