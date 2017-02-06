@@ -27,18 +27,23 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="page-header text-center">S e a r c h i f y</h1>
-        <form class="" action="submit" method="post">
-          <label for="search-box">Search Spotify Here...</label>
-          <input class="search-box panel" type="text" name="q" placeholder="enter a song">
+      <div class="col-md-10 col-md-offset-1">
+        <h1 class="page-header text-center">S e a r c h i f y<small>a spotify search engine</small></h1>
+        <form class="jumbotron" action="submit" method="post">
+          <label for="search-box"><h1>Feed Me Songs!</h1></label>
+          <input class="search-box panel" type="text" name="q" placeholder="enter a track title">
           <input class="search-btn btn-danger" type="submit" name="searchify-btn" value="Searchify">
           <input class="hidden-search-box panel" type="text" name="type" value="track">
         </form>
         <div id="results"></div>
-
-      </div>
+            <!--Results Are Appended Here-->
+        </div>
     </div>
   </div>
+<div class="container-fluid">
+  <footer class="text-center">
+    <p>© 2017 wakaspar</p>
+  </footer>
+</div>
 </body>
 </html>

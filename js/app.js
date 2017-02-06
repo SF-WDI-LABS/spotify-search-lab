@@ -1,6 +1,6 @@
 // wait for DOM to load before running JS
 $(document).on('ready', function() {
-  console.log('JS, you so cray');
+  //console.log('JS, you so cray');
 
   $('form').on('submit', function(){
     event.preventDefault();
@@ -20,22 +20,38 @@ var goAjax = function(){
       error: onError
     });
   }
-// AJAX Response Functions
+// AJAX's Response Functions
 var onSuccess = function(responseData){
-  console.log('good job, ajax: ');
-  console.log(responseData);
-  // Useful Response Data
+  // Array of Tracks Searched For
   var trackArray = responseData.tracks.items;
-  // Create 'Results' List
+
+  // Mines Data & Creates 'Results' List
   trackArray.forEach(function createList(trackName, i){
       trackName = responseData.tracks.items[i].name;
+      var trackLink = trackArray[i].uri;
       var albumArt = responseData.tracks.items[i].album.images[0].url;
-      // Grab Artist Name from Reponse Data
+      responseData.tracks.items[i].album.images[0].url;
+      // Grabs Artists' Names from Reponse Data
       var artistArray = responseData.tracks.items[i].artists;
       for (var j=0; j<artistArray.length; j++){
         var artistName = artistArray[j].name;
       }
-      $('#results').append(`<li class="panel"><img class="img-thumbnail" src="${albumArt}"><strong>${artistName}</strong> - ${trackName}</li>`);
+
+      // Appends Data as HTML
+      $('#results').append(
+        `<li class="panel">
+          <img class="img-thumbnail" src="${albumArt}">
+          <strong>${artistName}</strong> - ${trackName}
+          <br>
+          <iframe class="panel-footer embed-responsive-item"
+            src="https://embed.spotify.com/?uri=${trackLink}"
+            width="500"
+            height="100"
+            frameborder="0"
+            allowtransparency="true">
+           </iframe>
+        </li>`
+      );
   });
 }
 var onError = function(responseData){

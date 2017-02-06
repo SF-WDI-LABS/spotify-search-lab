@@ -9,9 +9,8 @@ label {
 }
 
 li {
-  background-image: url('wov.png');
   padding: 10px;
-  text-align: justify;
+  text-align: left;
   font-family: Arial, sans-serif;
   color: #393a3a;
 }
@@ -21,11 +20,30 @@ img {
   margin: 10px;
 }
 
-h1 {
-  font-size: 50px;
-  font-family: 'Luckiest Guy', sans-serif;
+footer {
+  color: #a8a8a8;
+  border-radius: 25px;
+  background: #212121;
+  position: relative;
+  left:0px;
+  bottom:0px;
+  height:20px;
+  width:80%;
+  margin: auto;
+}
+
+h4, .page-header{
   color: #588c48;
   text-shadow: 2px 2px black;
+}
+
+li, .jumbotron {
+  background-image: url('wov.png');
+}
+
+.page-header {
+  font-size: 50px;
+  font-family: 'Luckiest Guy', sans-serif;
 }
 
 .hidden-search-box {
