@@ -16,10 +16,15 @@
 
   <!-- jquery -->
   <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-
+   <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+  <!-- additional link to jQuery added -->
+  <!--  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+ -->
   <!-- custom script -->
-  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/app2.js"></script>
 
 </head>
 <body>
@@ -27,9 +32,21 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
+        <br>
+        <br>
+        <!-- search input form -->
+        <div class="row col-md-6 col-md-offset-3">
+          <form id="seach-form" type="submit">
+            <input type="text" id="query" class="search-text-input form-control" placeholder="Search for a track..." required>
+            <br>
+            <!-- search button -->
+            <input type="submit" class="row search-button btn-block"  value="Search">
+          </form>
+        </div>
         <div id="results"></div>
       </div>
     </div>
   </div>
+
 </body>
 </html>

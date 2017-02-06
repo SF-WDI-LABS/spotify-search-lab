@@ -1,1 +1,17 @@
 /* put custom styles in this file */
+
+input#query {
+  position: relative;
+  min-width: 320px;
+
+}
+
+.search-button {
+  font-family: helvetica, sans-serif;
+  border-radius: 4px;
+  color: white;
+  background-color: #1ed760;
+  border: 0px;
+  padding: 10px;
+  min-width: 320px;
+}
