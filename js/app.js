@@ -54,7 +54,7 @@ $(document).ready(function() {
 					<img src="${albumArt}" class="img-responsive"/>
 				</div>
 				<div class="col-xs-8">
-					<p>By ${artist1}</p>
+					<p><span>${trackname}</span> by ${artist1}</p>
 					<a href="${preview}" target="_blank" class="btn btn-sm btn-default">Preview <span class="glyphicon glyphicon-play"></a>
 				</div>
 			</di>`);

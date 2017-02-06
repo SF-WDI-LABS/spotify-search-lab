@@ -11,3 +11,7 @@ h1 {
 .track {
 	margin: 10px 0;
 }
+
+p span {
+	font-weight: bold;
+}
