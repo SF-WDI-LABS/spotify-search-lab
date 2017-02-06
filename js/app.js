@@ -12,7 +12,8 @@ $(document).on('ready', function() {
 
   // check to make sure JS is loaded
   console.log('JS is loaded!');
-
+$('button').on('click', function(event) {
+  event.preventDefault();
   $.ajax({
 
     // What kind of request
@@ -20,6 +21,7 @@ $(document).on('ready', function() {
 
     // The URL for the request
     url: "https://api.spotify.com/v1/search?q=hello&type=track",
+
 
     // The data to send aka query parameters
     data: $("form").serialize(),
@@ -37,9 +39,6 @@ function onSuccess(json){
   console.log(json);
 }
 
-function onError(xhr, status, errorThrown) {
+function onError() {
     alert("Sorry, there was a problem!");
-    console.log("Error: " + errorThrown);
-    console.log("Status: " + status);
-    console.dir(xhr);
   }
