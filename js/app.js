@@ -14,6 +14,7 @@ $(document).ready(function() {
 	$form.submit(function (event) {
 		event.preventDefault();
 		$("#results").empty();
+		$("#results").append(`<div class="text-center"><img class="gif" src="images/loading.gif"></div>`);
 		$.ajax({
 			method: "GET",
 			url: endpoint,
@@ -32,7 +33,7 @@ $(document).ready(function() {
 			// var artist2;
 			var albumArt;
 			var preview;
-
+			$("#results").empty();
 			responseArr.forEach(function(item){
 				trackname = item.name;
 				artist1 = item.artists[0].name;
@@ -49,6 +50,7 @@ $(document).ready(function() {
 					albumArt = item.album.images[0].url;
 					// $("#results").append(`<img src="${albumArt}"><a href="${preview}" target="_blank">Preview</a>`)
 				}
+				
 				$("#results").append(`<div class="row track">
 				<div class="col-xs-4">
 					<img src="${albumArt}" class="img-responsive"/>
