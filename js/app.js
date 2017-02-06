@@ -31,15 +31,19 @@ $(document).ready( function(){
         albumArt = track.album.images[0].url;
       }
 
+      var preview = track.preview_url;
+
       $("#results").append($(`
         <div class="media">
           <div class="media-left">
             <a href="#">
-              <img class="media-object" width="64" height="64" src="${albumArt}" alt="album image">
+              <img class="media-object" width="200" height="200" src="${albumArt}" alt="album image">
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading">${track.name} by: ${artists}</h4>
+            <h4 class="media-heading"><b>${track.name}</b> by <em>${artists}</em></h4>
+            <a href="${preview}" target="_blank" class="btn btn-default">
+            Preview</a>
             </div>
         </div>`)
         )

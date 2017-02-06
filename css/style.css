@@ -1,1 +1,7 @@
 /* put custom styles in this file */
+#results {
+  padding: 20px;
+}
+form {
+  text-align: center;
+}
