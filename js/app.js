@@ -6,6 +6,7 @@ $(document).on('ready', function() {
     event.preventDefault();
     $('#results').empty();
     goAjax();
+    $('#results').append(`<img src="images/loading.gif" alt="now searching...">`);
   });
 
 
@@ -22,6 +23,7 @@ var goAjax = function(){
   }
 // AJAX's Response Functions
 var onSuccess = function(responseData){
+  $('#results').empty();
   // Array of Tracks Searched For
   var trackArray = responseData.tracks.items;
 
@@ -56,5 +58,12 @@ var onSuccess = function(responseData){
 }
 var onError = function(responseData){
   console.log('try again, ajax');
+  $('#results').empty();
+  $('#results').append(
+    `<h1 class="jumbotron">Sorry, Invalid Search...
+      <br>
+      <small>Feel free to try again. :)</small>
+    </h1>>`
+  );
 }
 });
