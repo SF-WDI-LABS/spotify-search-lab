@@ -1,5 +1,3 @@
-console.log('Sanity Check: JS is loaded!');
-
 $(document).ready(function() {
   // set template literals for html elements to variables
   var $spotifySearchForm = $('#spotify-search');
