@@ -5,7 +5,8 @@
 ## Technologies Used
 1. jQuery
 2. AJAX
-3. Spotify API   
+3. Spotify API
+4. Bootstrap
 
 ## Existing Features
 1. User can use the form to search for tracks (songs) using in input field for the search keyword.
@@ -13,7 +14,7 @@
 3. Each time the user submits the form, previous search results are cleared from view.
 
 ## Future Features
-1. Allow the user to filter results by song, artist and album.
+1. Allow the user to filter results by artist and album.
 2. Currently the preview button routes the user to another webpage. Incorporate the preview play, pause and stop button into each result.
 
 
