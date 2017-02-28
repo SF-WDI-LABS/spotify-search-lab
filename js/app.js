@@ -47,6 +47,7 @@
       data = responseData;
 
   // BEGIN LOOPING
+  // BEGIN forEach
     for (var i=1; i<6; i++){
 
       albumCover = data.tracks.items[i].album.images[1].url;
