@@ -1,1 +1,41 @@
 /* put custom styles in this file */
+
+h1.text-center{
+  margin-top: 61px;
+}
+
+.album-cover {
+  float: left;
+}
+
+.btn-play {
+  float: left;
+}
+
+.right-result {
+  float: left;
+  margin-left: 36px;
+}
+
+#search-button {
+  font-size: 18px;
+      line-height: 1.5;
+      border-radius: 500px;
+      padding: 8px 47px 8px;
+      border-width: 0;
+      letter-spacing: 1.2px;
+      min-width: 130px;
+      text-transform: uppercase;
+      white-space: normal;
+      background-color: #2ebd59;
+      color: white;
+      margin-top: 7px;
+
+
+}
+
+#enter-search {
+  width: 29%;
+  height: 34px;
+  font-size: 20px;
+}
