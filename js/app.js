@@ -18,23 +18,20 @@ $(document).on('ready', function() {
       url: newUrl, //api.spotify.com/v1/search?q=candle&type=track',
       success: function(responseData) {
 
-        // console.log(responseData.tracks.items[i].artists[0].name);
-        // console.log(responseData.tracks.items[i].name);
-
         for (var i = 0; i < 20; i++) {
 
           var trackName = responseData.tracks.items[i].name;
           var artistName = responseData.tracks.items[i].artists[0].name;
-          var albumCover = responseData.tracks.items[i].album.images[1].url
+          var albumCover = responseData.tracks.items[i].album.images[0].url
 
-
-          // $('.apiresults').append(`<p>Brandon</p>`);
-          // i = 5;
-          //
-          // $('.apiresults').append(`<img src="${albumCover}"><p>${trackName} by ${artistName}</p>`);
-
-
-        $('.apiresults').append(`<img src="${albumCover}"><p>${trackName} by ${artistName}</p>`);
+        $('.apiresults').append(`
+            <div class="container results-format">
+              <div class="row">
+                <img src="${albumCover}">
+                <p class="song-artist">${trackName} by ${artistName}</p>
+                </div>
+            </div>
+            `);
         //$('.apiresults').append(`<p>${responseData.tracks.items[i].album.artists[0].name}</p>`);
         }
       }
@@ -44,9 +41,3 @@ $(document).on('ready', function() {
 
   }); // dont delete this line form
 }); // dont delete this line document ready
-
-
-
-//https://api.spotify.com/v1/search?q=candle&type=track&market=US
-//tracks.items[4].album.artists[0].name
-//tracks.items[1].album.artists[0].name

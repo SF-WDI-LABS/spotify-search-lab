@@ -1,7 +1,51 @@
 /* put custom styles in this file */
+body {
+}
 
 h1 {
   background: red;
+  border-style: dashed;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.spotify-search {
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  padding: 15px;
+  text-transform: uppercase;
+  background: #2ebd59;
+  font-family: 'Lato', Arial;
+  border-color: red;
+}
+
+.results-format {
+  background: blue;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  border-style: solid;
+  border-color: yellow;
+}
+
+img {
+  display: block;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  float: left;
+}
+
+.song-artist {
+  font-family: 'Lato', Arial;
+  font-size: 12px;
+  float: left;
+}
+
+.john {
+  background: purple;
   border-style: dashed;
   margin-bottom: 50px;
   padding: 20px;
