@@ -27,7 +27,19 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form class="form-inline">
+          <div class="search-line">
+            <label>Search Tracks</label>
+            <input type="text" class="track-input" name="q"  placeholder="search track name"><br>
+          </div>
+          <div class="submit-button">
+            <input type="submit" value="Find that song!" class="btn btn-primary">
+          </div>
+        </form>
+        <div id="results">
+          <ol class="results-list">
+          </ol>
+        </div>
       </div>
     </div>
   </div>
