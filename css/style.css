@@ -1,1 +1,18 @@
 /* put custom styles in this file */
+.search-line {
+  text-align: center;
+}
+
+input.form-control.track-input {
+  width: 300px;
+}
+
+.find-button {
+  text-align: center;
+}
+input.btn.btn-primary {
+  color: black;
+  background-color: #1ED760;
+  width: 400px;
+  margin-top: 10px;
+}
