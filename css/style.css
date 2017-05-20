@@ -1,1 +1,70 @@
-/* put custom styles in this file */
+
+.query-text {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.button-search {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(3, 160, 54);
+  color: white;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.track-cont-outer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 20px 0;
+}
+
+.track-cont-inner-left {
+  height: 150px;
+  width: 150px;
+}
+
+.track-cont-inner-right {
+  height: 150px;
+  width: 400px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.preview-button {
+  padding: 10px 0 0 0;
+}
+
+img {
+  max-width: 150px;
+}
+
+.track-name {
+  font-weight: 600;
+}
+
+.button-preview {
+  height: 30px;
+  width: 90px;
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.no-results-msg {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.button-search:focus {
+  outline: 0;
+}
+
+.button-preview:focus {
+  outline: 0;
+}
