@@ -32,6 +32,6 @@ getData();
       let trackName = v.name;
       let artist = v.artists[0].name;
       let previewURL = v.preview_url;
-      $(".results-list").append($("<a href="+previewURL+"><li class='track-artist' src="+trackName+"></li></a>").text(trackName + ", By: " + artist));
+      $(".results-list").append($("<li class='track-artist' src="+trackName+"></li>").text(trackName + ", By: " + artist), $("<a href="+previewURL+"></a>").text("Click to preview " + trackName));
     });
   };
