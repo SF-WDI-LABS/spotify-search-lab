@@ -21,6 +21,7 @@ $(document).on("ready", function() {
   }
 
   function onSuccess(resultData) {
+
     $(".track-artist").remove();
     $(".album-pic").remove();
     $(".preview-link").remove();
@@ -32,5 +33,8 @@ $(document).on("ready", function() {
       let previewURL = v.preview_url;
       let albumPic = v.album.images[0].url;
       $(".results-list").append($("<img class='img-responsive img-thumbnail album-pic' src="+albumPic+">"), $("<li class='track-artist' src="+trackName+"></li>").text(trackName + ", By: " + artist), $("<a href="+previewURL+" class ='preview-link'></a>").text("Click to preview " + trackName));
+    });
+    $("form").each(function(){
+      this.reset();
     });
   };
