@@ -1,18 +1,25 @@
-
-
-// wait for DOM to load before running JS
-$(document).on('ready', function() {
-  //console.log('JS is loaded!');
   var endpoint = "https://api.spotify.com/v1/search";
+  
+$(document).on("ready", function() {
+  //console.log('JS is loaded!');
+
   getData();
+  var userInput = $("input.track-input");
+  var trackToSearch = userInput.val();
+
+  $("form").on("submit", function(e) {
+    e.preventDefault();
+    getData();
+  });
+});
 
   function getData() {
     $.ajax({
       method: "GET",
       url: endpoint,
       data: {
-        type: "track",
-        q: "query"
+        q: "lizard",
+        type: "track"
       },
       success: onSuccess
     });
@@ -20,6 +27,4 @@ $(document).on('ready', function() {
 
   function onSuccess(resultData) {
     console.log(resultData);
-  }
-
-});
+  };

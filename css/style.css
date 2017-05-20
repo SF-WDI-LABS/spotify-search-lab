@@ -1,9 +1,11 @@
 /* put custom styles in this file */
+/*
 .search-line {
   text-align: center;
 }
+*/
 
-input.form-control.track-input {
+input.track-input {
   width: 300px;
 }
 
