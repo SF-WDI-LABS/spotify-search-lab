@@ -71,9 +71,9 @@ function getSpotifyData() {
           <div class=\"track-cont-inner-right\">
             <div class=\"track-text\"><span class=\"track-name\">${track.name}</span> by ${track.artists[0].name}</div>
             <div class=\"preview-button\">
-              <input class=\"button-preview\" id=\"${index}\" type=\"submit\" value=\"Preview\">
-                <span class=\"glyphicon glyphicon-search\"></span>
-              </input>
+              <button type="button" class="btn btn-default button-preview" id=\"${index}\">
+                Preview <span class="glyphicon glyphicon-play"></span>
+              </button>
             </div>
           </div>
         </div>
@@ -105,6 +105,7 @@ function getSpotifyData() {
 function previewTrack(el) {
 
   var buttonID = $(this).attr('id');
+  console.log(buttonID);
   var audioSrc = spotifyPayload.tracks.items[buttonID].preview_url;
   var audio = new Audio(audioSrc);
   //audio.play();
