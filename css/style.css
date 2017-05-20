@@ -20,6 +20,9 @@ input.btn.btn-primary {
 }
 
 #results {
-  background-color: yellow;
   margin: 4px auto;
+}
+
+.track-artist {
+  margin: 2px auto;
 }
