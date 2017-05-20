@@ -18,3 +18,8 @@ input.btn.btn-primary {
   width: 400px;
   margin-top: 10px;
 }
+
+#results {
+  background-color: yellow;
+  margin: 4px auto;
+}

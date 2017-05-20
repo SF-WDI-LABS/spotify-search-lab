@@ -26,5 +26,11 @@ getData();
   }
 
   function onSuccess(resultData) {
-    console.log(resultData);
+    $(".track-artist").remove();
+    let trax = resultData.tracks.items;
+    //console.log(trax[6].name);
+    trax.forEach(function(v,i){
+      let trackName = v.name;
+      $("ol").append($("<li class='track-artist' src="+trackName+"></li>").text(trackName));
+    });
   };
