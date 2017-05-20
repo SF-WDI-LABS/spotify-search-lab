@@ -27,11 +27,15 @@ getData();
 
   function onSuccess(resultData) {
     $(".track-artist").remove();
+    $(".album-pic").remove();
+    $(".preview-link").remove();
     let trax = resultData.tracks.items;
+    console.log(trax);
     trax.forEach(function(v,i){
       let trackName = v.name;
       let artist = v.artists[0].name;
       let previewURL = v.preview_url;
-      $(".results-list").append($("<li class='track-artist' src="+trackName+"></li>").text(trackName + ", By: " + artist), $("<a href="+previewURL+"></a>").text("Click to preview " + trackName));
+      let albumPic = v.album.images[0].url;
+      $(".results-list").append($("<img class='img-responsive img-thumbnail album-pic' src="+albumPic+">"), $("<li class='track-artist' src="+trackName+"></li>").text(trackName + ", By: " + artist), $("<a href="+previewURL+" class ='preview-link'></a>").text("Click to preview " + trackName));
     });
   };

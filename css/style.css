@@ -1,15 +1,15 @@
 /* put custom styles in this file */
-/*
-.search-line {
-  text-align: center;
-}
-*/
+
 
 input.track-input {
   width: 300px;
 }
 
-.find-button {
+.search-line {
+  text-align: center;
+}
+
+.submit-button {
   text-align: center;
 }
 input.btn.btn-primary {
@@ -25,5 +25,8 @@ input.btn.btn-primary {
 
 .track-artist {
   margin: 3px auto;
+}
 
+.album-pic {
+  margin-top: 30px;
 }
