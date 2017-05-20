@@ -1,11 +1,13 @@
-  var endpoint = "https://api.spotify.com/v1/search";
-  
+var endpoint = "https://api.spotify.com/v1/search";
+
+var userInput = $("input.track-input");
+var trackToSearch = userInput.val();
+
 $(document).on("ready", function() {
   //console.log('JS is loaded!');
 
   getData();
-  var userInput = $("input.track-input");
-  var trackToSearch = userInput.val();
+
 
   $("form").on("submit", function(e) {
     e.preventDefault();
@@ -18,7 +20,7 @@ $(document).on("ready", function() {
       method: "GET",
       url: endpoint,
       data: {
-        q: "lizard",
+        q: `${trackToSearch}`,
         type: "track"
       },
       success: onSuccess
