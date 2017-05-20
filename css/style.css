@@ -6,15 +6,19 @@
   margin: 10px 0;
   border: 1px solid grey;
   border-radius: 5px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
 }
 
 .button-search {
   width: 100%;
   height: 40px;
-  background-color: rgb(3, 160, 54);
+  background-color: rgb(46, 184, 46);
   color: white;
   border-radius: 5px;
   border: 0px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
 }
 
 .track-cont-outer {
@@ -41,6 +45,11 @@
 
 img {
   max-width: 150px;
+}
+
+.track-text {
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
 }
 
 .track-name {
