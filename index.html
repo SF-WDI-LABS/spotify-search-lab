@@ -30,13 +30,14 @@
         <h1 class="text-center">Spotify Search</h1>
         <form class="form-inline">
 						<label>Search tracks</label>
-						<input type="text" class="form-control" name="q" value="" placeholder="Song Title">
+						<input type="text" class="form-control" name="q" value="" placeholder="Song Title" required>
             <input type="hidden" name="type" value="track">
 						<input type="submit" value="Search" class="btn btn-primary">
 					</form>
+          <div id="loading"><img src="images/loading.gif" alt="loading data"></div>
 
         <div id="results">
-          <div id="loading"><img src="images/loading.gif" alt="loading data"></div>
+
           <div class="cards"></div>
         </div>
       </div>
