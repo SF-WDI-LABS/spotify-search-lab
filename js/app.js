@@ -32,7 +32,7 @@ function getSpotifyData() {
   // if there is no text entered for the search, don't make the call to Spotify (will always result in a bad request)
   if (searchQuery === "") {
     $("#results").empty();
-    var elString = `<p class=\"no-results-msg\">Please enter a song name to search for.</p>`
+    var elString = `<p class=\"no-results-msg\">Please enter a song name to search for</p>`
     $("#results").append(elString);
     return;
   }
@@ -56,29 +56,47 @@ function getSpotifyData() {
     // if the payload does not have any tracks, display a message to the user
     if (payload.tracks.total === 0) {
 
-      var elString = `<p class=\"no-results-msg\">Sorry, no songs where found matching \"${searchQuery}\"</p>`
+      var elString = `<p class=\"no-results-msg\">There are no songs found matching \"${searchQuery}\"</p>`
       $("#results").append(elString);
 
     } else {
 
       payload.tracks.items.forEach(function(track, index) {
 
+        var buttonEl;
+        if (track.preview_url !== null) {
+          buttonEl = `
+          <button type="button" class="btn btn-default button-preview" id=\"${index}\">
+            Preview <span class="glyphicon glyphicon-play"></span>
+          </button>`
+        } else {
+          buttonEl = "";
+        }
+
+        var audioEl;
+        if (track.preview_url !== null) {
+          audioEl = `<audio class=\"audio-preview\" id=\"audio${index}\" src=\"${track.preview_url}\"></audio>`;
+        } else {
+          audioEl = "";
+        }
+
         var elString = `
         <div class=\"track-cont-outer\">
           <div class=\"track-cont-inner-left\">
             <img class=\"track-image\" src=\"${track.album.images[0].url}\" alt=\"(no album art)\">
+            <div class="middle">
+              <div class=\"text\">${track.album.name}</div>
+            </div>
           </div>
           <div class=\"track-cont-inner-right\">
             <div class=\"track-text\"><span class=\"track-name\">${track.name}</span> by ${track.artists[0].name}</div>
             <div class=\"preview-button\">
-              <button type="button" class="btn btn-default button-preview" id=\"${index}\">
-                Preview <span class="glyphicon glyphicon-play"></span>
-              </button>
+              ${buttonEl}
+              ${audioEl}
             </div>
           </div>
         </div>
         `
-        //console.log(elString);
 
         $("#results").append(elString);
 
@@ -95,7 +113,10 @@ function getSpotifyData() {
   }
 
   function onError(payload) {
-    console.log("there was an error");
+
+    var elString = `<p class=\"no-results-msg\">Sorry, there was a problem fetching the results from Spotify</p>`
+    $("#results").append(elString);
+
   }
 
 }
@@ -104,15 +125,22 @@ function getSpotifyData() {
 // function to listen to a preview of the track
 function previewTrack(el) {
 
-  var buttonID = $(this).attr('id');
-  console.log(buttonID);
-  var audioSrc = spotifyPayload.tracks.items[buttonID].preview_url;
-  var audio = new Audio(audioSrc);
-  //audio.play();
+  // pause any tracks that may be playing first
+  var audioElements = document.getElementsByClassName("audio-preview");
+  for (var i = 0; i < audioElements.length; i++) {
+    audioElements[i].pause();
+  }
 
-  //$(".audio-preview").attr("src", "https://p.scdn.co/mp3-preview/c18d95927c9dd7fc89977d7bd3a52348d7bae985?cid=null");
-  //document.getElementById("#audio").play();
-  //$(".audio-preview").get(0).play()
-  //console.log(el);
+  // determine the specific button that was pressed by getting it's id, then use that to grab the preview_url for the associated track
+  var buttonID = $(this).attr('id');
+  var audioSrc = spotifyPayload.tracks.items[buttonID].preview_url;
+
+  // set the DOM element for the particular <audio> element
+  var audioElement = document.getElementById("audio" + buttonID);
+
+  // play the track
+  if (audioSrc !== null) {
+    audioElement.play();
+  }
 
 }
