@@ -1,1 +1,22 @@
 /* put custom styles in this file */
+.cards{
+  display: inline-block;
+  margin: 10px;
+}
+.title{
+  display:inline;
+  margin:10px
+}
+.btn{
+  display:inline;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+input.btn-primary,
+input.button-primary:hover,
+input.button-primary:focus {
+  background-color: green;
+}
+#loading {
+  display: none;
+}
