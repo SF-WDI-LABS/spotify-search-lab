@@ -26,6 +26,7 @@
 
 
 <body>
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -33,35 +34,21 @@
 
         <!-- Search bar Spotify -->
         <form class="spotify-search">
-
-          <label>Input Song Title</label>
-
-          <input type="search" class="form-control gif-input" name="q" value="">
+          <label>Search by Song Title</label>
+          <input type="search" class="form-control gif-input" name="q" value="" id="input-field">
           <input type="hidden" name="type" value="track">
-
           <input type="submit" value="Search" class="btn btn-primary btn-block">
-
         </form>
 
+        <!-- List of results from Spotify -->
+        <div id="results"></div>
+        <div class="apiresults"></div>
 
-  <div class="container john">
-    <!-- <div class="row"> -->
-      <div class="col-sm-6 col-md-offset-3">
-        <p>hello</p>
       </div>
-      <div class="col-sm-6 col-md-offset-3">
-        <p>what</p>
-      </div>
-    <!-- </div> -->
 
+    <!-- THe first container and row       -->
+    </div>
   </div>
 
-  <!-- List of results from Spotify -->
-  <div id="results"></div>
-  <div class="apiresults"></div>
-
-</div>
-</div>
-</div>
 </body>
 </html>

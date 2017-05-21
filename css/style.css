@@ -1,15 +1,12 @@
 /* put custom styles in this file */
 body {
+  background: #ffffff;
 }
 
 h1 {
-  background: red;
-  border-style: dashed;
   margin-bottom: 50px;
   padding: 20px;
-}
-
-.spotify-search {
+  display: block;
 }
 
 .btn {
@@ -19,34 +16,28 @@ h1 {
   text-transform: uppercase;
   background: #2ebd59;
   font-family: 'Lato', Arial;
-  border-color: red;
 }
 
 .results-format {
-  background: blue;
   padding-top: 25px;
   padding-bottom: 20px;
-  border-style: solid;
-  border-color: yellow;
+  padding-left: 15px;
+  border: 1px;
+  border-bottom-style: solid;
+  border-color: #DCDCDC;
+  width: auto;
 }
 
 img {
+  float: left;
   display: block;
   max-width: 150px;
   width: auto;
   height: auto;
-  float: left;
+  padding-right: 10px;
 }
 
 .song-artist {
   font-family: 'Lato', Arial;
   font-size: 12px;
-  float: left;
-}
-
-.john {
-  background: purple;
-  border-style: dashed;
-  margin-bottom: 50px;
-  padding: 20px;
 }
