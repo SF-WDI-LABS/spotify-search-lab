@@ -1,7 +1,14 @@
 /* put custom styles in this file */
+
+.cards a,.cards a:hover,.cards a:focus{
+  color:grey;
+  background-color:none;
+  text-decoration:none;
+}
 .cards{
   display: inline-block;
   margin: 10px;
+  width:800px;
 }
 .title{
   display:inline;
@@ -10,12 +17,13 @@
 .btn{
   display:inline;
   background-color: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid grey;
 }
 input.btn-primary,
-input.button-primary:hover,
-input.button-primary:focus {
+input.btn-primary:hover,
+input.btn-primary:focus {
   background-color: green;
+  border: 1px solid green;
 }
 #loading {
   display: none;
