@@ -1,1 +1,5 @@
 /* put custom styles in this file */
+
+#loading{
+  display: none;
+}
