@@ -18,12 +18,12 @@ $(document).on('ready', function() {
 // CLEAR SEARCH FIELD
         $('#results').html("");
 
-        let responseArray = response.artists.items;
+        let responseArray = response.tracks.items;
 
         responseArray.forEach( function(i) {
-          let pic   = i.images[2].url;
+          let pic   = i.album.images[2].url;
           let name  = i.name
-          let link  = i.external_urls.spotify
+          let link  = i.album.artists[0].external_urls.spotify
 
           $("#results").append(`<li class="list-group-item"><a href="${link}"><img src="${pic}">${name}</a></li>`)
         })
