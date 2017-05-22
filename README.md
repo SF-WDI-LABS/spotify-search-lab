@@ -8,7 +8,7 @@ There are no extra installation requirements aside from a browser such as Chrome
 
 ## Usage
 
-Enter a song/track name to fine and click the Search button or hit the Enter key.  Hover over the album art to see the name of the album.  Click the Preview button to hear a snippet from the song.
+Enter a song/track name then click the Search button or hit the Enter key.  Hover over the album art to see the name of the album.  Click the Preview button to hear a snippet from the song.
 
 ## Technologies Used
 
