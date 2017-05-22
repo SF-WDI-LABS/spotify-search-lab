@@ -1,1 +1,46 @@
 /* put custom styles in this file */
+
+.top-bar {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #000;
+}
+
+.text-center {
+  font-size: 42px;
+  margin-bottom: 35px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.artist-input {
+  width: 350px !important;
+}
+
+.form-inline {
+  margin-top: 30px;
+}
+
+img {
+  margin-right: 10px;
+}
+
+.list-group-item {
+  font-size: 30px;
+  height: 400px;
+  width: 180px;
+}
+
+a {
+  text-decoration: none !important;
+  color: #000;
+  tex
+}
+
+.logo {
+  float: left;
+  margin: 20px 10px 0 0;
+}
+
+#results {
+  display: inline-block;
+}

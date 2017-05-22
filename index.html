@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
 
@@ -22,14 +23,38 @@
   <script type="text/javascript" src="js/app.js"></script>
 
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+  <div class='header'>
+    <div class="container-fluid">
+      <div class="row top-bar">
+        <div class="col-xs-6">
+          <img class="logo" src="images/spotify-icon-25.png" height="50" width-"50">
+          <h1 class="text-center">Spotify Search</h1>
+        </div>
+        <div class="col-xs-6">
+          <form class="form-inline" method="GET" action="">
+            <input type="text" class="form-control artist-input" name="q" value="" placeholder="Search Artists on Spotify">
+            <input type="hidden" name="type" value="artist">
+            <input type="submit" value="Search" class="btn btn-primary">
+          </form>
+        </div>
       </div>
     </div>
   </div>
+  <div class="main">
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <ul id="results" class="list-inline">
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
 </body>
+
 </html>
