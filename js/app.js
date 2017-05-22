@@ -1,11 +1,10 @@
 
-// global variables
+// declare / init global variables
 var spotifyEndPoint = "https://api.spotify.com/v1/search";  // specify the spotify end point
 var spotifyPayload;
 
 // wait for DOM to load before running JS
 $(document).on('ready', function() {
-
 
   // set up an event listener for the search button, to get API data when it is clicked
   $(".button-search").on("click", getSpotifyData);
@@ -24,19 +23,24 @@ function searchOnEnter(pressEvent) {
 }
 
 
-// function to get JSON from the Spotify API, and display the album art, track name and artist
+// function to get JSON from the Spotify API, and display the track name, artist, and album art
 function getSpotifyData() {
 
+  // store the search term in a variable
   var searchQuery = $(".query-text").val();
 
   // if there is no text entered for the search, don't make the call to Spotify (will always result in a bad request)
   if (searchQuery === "") {
+    // clear the results (remove all child element from the results div)
     $("#results").empty();
+    // display a message telling the user to enter a search term
     var elString = `<p class=\"no-results-msg\">Please enter a song name to search for</p>`
     $("#results").append(elString);
+    // break out of the function
     return;
   }
 
+  // make the call to the Spotify end point
   $.ajax({
     	method: "GET",
     	url: spotifyEndPoint,
@@ -48,9 +52,11 @@ function getSpotifyData() {
     	error: onError
   });
 
+
+  // function to execute if the API call was successfull
   function onSuccess(payload) {
 
-    console.log(payload);
+    // clear the results (remove all child element from the results div)
     $("#results").empty();
 
     // if the payload does not have any tracks, display a message to the user
@@ -59,27 +65,23 @@ function getSpotifyData() {
       var elString = `<p class=\"no-results-msg\">There are no songs found matching \"${searchQuery}\"</p>`
       $("#results").append(elString);
 
+    // otherwise, display the results
     } else {
 
+      // iterate through each track
       payload.tracks.items.forEach(function(track, index) {
 
-        var buttonEl;
+        // only add the button and audio elements if there is a preview_url for this track
+        var buttonEl = "", audioEl = "";
         if (track.preview_url !== null) {
           buttonEl = `
           <button type="button" class="btn btn-default button-preview" id=\"${index}\">
             Preview <span class="glyphicon glyphicon-play"></span>
           </button>`
-        } else {
-          buttonEl = "";
-        }
-
-        var audioEl;
-        if (track.preview_url !== null) {
           audioEl = `<audio class=\"audio-preview\" id=\"audio${index}\" src=\"${track.preview_url}\"></audio>`;
-        } else {
-          audioEl = "";
         }
 
+        // build the string of html for this track, that will go inside the results div
         var elString = `
         <div class=\"track-cont-outer\">
           <div class=\"track-cont-inner-left\">
@@ -98,6 +100,7 @@ function getSpotifyData() {
         </div>
         `
 
+        // append the string to the results div element
         $("#results").append(elString);
 
         // set up an event listener for the preview button
@@ -112,8 +115,11 @@ function getSpotifyData() {
 
   }
 
+
+  // function to execute if the API call was not successfull
   function onError(payload) {
 
+    // display a message telling the user there was some problem getting results
     var elString = `<p class=\"no-results-msg\">Sorry, there was a problem fetching the results from Spotify</p>`
     $("#results").append(elString);
 
@@ -122,10 +128,10 @@ function getSpotifyData() {
 }
 
 
-// function to listen to a preview of the track
+// function that will be called when a preview button is clicked, to listen to a clip of the song
 function previewTrack(el) {
 
-  // pause any tracks that may be playing first
+  // pause any tracks that may be playing first (iterate through and pause all of them, since we don't know which one may be playing)
   var audioElements = document.getElementsByClassName("audio-preview");
   for (var i = 0; i < audioElements.length; i++) {
     audioElements[i].pause();
