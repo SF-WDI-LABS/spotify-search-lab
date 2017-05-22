@@ -32,4 +32,4 @@ Enter a song/track name to fine and click the Search button or hit the Enter key
 2. added buttons for listening to a preview of the track
 3. update the style of the website
 4. testing and fixes
-5. final rouches
+5. final touches
