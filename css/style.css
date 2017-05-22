@@ -1,1 +1,43 @@
 /* put custom styles in this file */
+body {
+    background: url("../images/logo.jpg") #1ED760 no-repeat fixed center;
+    padding-top: 25px;
+    position: static;
+    display: block;
+    font-family: 'Signika', sans-serif;
+    text-align: center;
+    color: white;
+}
+#search-form, .form-control {
+    margin-bottom: 20px;
+    color: #1ED760;
+}
+h1 {
+  font-size: 6em;
+  font-weight: bold;
+}
+a {
+  color: black;
+  font-weight: bold;
+}
+p {
+  font-size: 18px;
+  color: black;
+}
+.btn {
+  background-color: white;
+  color: #1ED760;
+}
+.cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    display: inline-block;
+    background-size: cover;
+}
+.cover:hover {
+    cursor: pointer;
+}
+.cover.playing {
+    border: 5px solid white;
+}
