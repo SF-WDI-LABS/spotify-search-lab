@@ -24,7 +24,7 @@
 .track-cont-outer {
   display: flex;
   flex-wrap: nowrap;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .track-cont-inner-left {
