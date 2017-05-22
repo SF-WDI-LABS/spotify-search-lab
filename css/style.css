@@ -1,1 +1,106 @@
-/* put custom styles in this file */
+
+.query-text {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
+}
+
+.button-search {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(46, 184, 46);
+  color: white;
+  border-radius: 5px;
+  border: 0px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
+}
+
+.track-cont-outer {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 30px 0;
+}
+
+.track-cont-inner-left {
+  height: 175px;
+  width: 175px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+
+.track-cont-inner-right {
+  height: 175px;
+  width: 400px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.preview-button {
+  padding: 10px 0 0 0;
+}
+
+.preview-button:focus {
+  background-color: white;
+}
+
+img {
+  max-width: 175px;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.track-text {
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
+}
+
+.track-name {
+  font-weight: 600;
+}
+
+.no-results-msg {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.button-search:focus {
+  outline: 0;
+}
+
+.button-preview:focus {
+  outline: 0;
+}
+
+.middle {
+  transition: 1s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.track-cont-inner-left:hover .track-image {
+  opacity: 0.3;
+}
+
+.track-cont-inner-left:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  font-family: "Helvetica", sans-serif;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+  text-align: center;
+}
