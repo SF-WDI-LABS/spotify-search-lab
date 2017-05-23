@@ -13,32 +13,55 @@
 }
 
 .artist-input {
-  width: 350px !important;
+  width: 400px !important;
+  border-radius: 0 !important;
 }
 
 .form-inline {
   margin-top: 30px;
+  float: right;
+  margin-right: 45px;
+}
+
+.thumbnail {
+  height: 450px !important;
+}
+
+strong {
+  height: 55px !important;
 }
 
 img {
-  margin-right: 10px;
+  margin-left: 0;
 }
 
 .list-group-item {
-  font-size: 24px;
+  font-size: 16px;
 }
 
-a {
-  text-decoration: none !important;
-  color: #000;
-  tex
+.btn {
+  background-color: rgba(0,0,0, 0.5);
+  color: white;
+  border-radius: 0 !important;
+  border: none;
+  width: 90px;
+  padding: 7px 12px !important;
+}
+
+input.btn {
+  margin-left: 13px;
+}
+
+span {
+  margin-right: 5px;
 }
 
 .logo {
   float: left;
-  margin: 20px 10px 0 0;
+  margin: 20px 10px 0 40px;
 }
 
-#results {
+h3 {
   display: inline-block;
+  font-size: 18px !important;
 }
