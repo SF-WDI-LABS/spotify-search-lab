@@ -1,1 +1,67 @@
 /* put custom styles in this file */
+
+.top-bar {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #000;
+}
+
+.text-center {
+  font-size: 42px;
+  margin-bottom: 35px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.artist-input {
+  width: 400px !important;
+  border-radius: 0 !important;
+}
+
+.form-inline {
+  margin-top: 30px;
+  float: right;
+  margin-right: 45px;
+}
+
+.thumbnail {
+  height: 450px !important;
+}
+
+strong {
+  height: 55px !important;
+}
+
+img {
+  margin-left: 0;
+}
+
+.list-group-item {
+  font-size: 16px;
+}
+
+.btn {
+  background-color: rgba(0,0,0, 0.5);
+  color: white;
+  border-radius: 0 !important;
+  border: none;
+  width: 90px;
+  padding: 7px 12px !important;
+}
+
+input.btn {
+  margin-left: 13px;
+}
+
+span {
+  margin-right: 5px;
+}
+
+.logo {
+  float: left;
+  margin: 20px 10px 0 40px;
+}
+
+h3 {
+  display: inline-block;
+  font-size: 18px !important;
+}
