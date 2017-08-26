@@ -10,6 +10,7 @@
 
   <!-- bootstrap css -->
   <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -26,7 +27,18 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form class="form-inline">
+						<label>Search tracks</label>
+						<input type="text" class="form-control" name="q" value="" placeholder="Song Title" required>
+            <input type="hidden" name="type" value="track">
+						<input type="submit" value="Search" class="btn btn-primary">
+					</form>
+          <div id="loading"><img src="images/loading.gif" alt="loading data"></div>
+
+        <div id="results">
+
+          <div class="cards"></div>
+        </div>
       </div>
     </div>
   </div>
