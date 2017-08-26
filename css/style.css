@@ -1,1 +1,8 @@
 /* put custom styles in this file */
+#qName {
+  width: 67%;
+  margin-top: 10px;
+}
+ .butt {
+   width: 160px;
+ }
