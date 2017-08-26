@@ -5,15 +5,17 @@ $(document).ready( function() {
   console.log('JS is loaded!');
 
   // your code here
-  $.ajax({
-    method: 'GET',
-    url: "https://api.spotify.com/v1/search",
-    data: {
-      q: $('#name').val(),
-      type: $('#type').val()
-    },
-    headers: {
-      "authorization": "Bearer BQCt71ojl381dFiRTKz98bY-jilJLacij_5rGMf0XWfQzX2EZIc8vZ7hcenDlx89bVM9nRTKpdaAywy8M3MZ-Q"
-    }
-
+  $('.butt').submit(function(){
+    $.ajax({
+      method: 'GET',
+      url: "https://api.spotify.com/v1/search",
+      data: {
+        q: $('#qName').val(),
+        type: $('#qType').val()
+      },
+      headers: {
+        "authorization": "Bearer BQCt71ojl381dFiRTKz98bY-jilJLacij_5rGMf0XWfQzX2EZIc8vZ7hcenDlx89bVM9nRTKpdaAywy8M3MZ-Q"
+      }
+    });
+  });
 });
