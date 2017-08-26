@@ -1,1 +1,19 @@
 /* put custom styles in this file */
+input{
+	width: 100%;
+	margin: 7px 0 ;
+
+}
+
+input[type=submit]{
+
+}
+
+main{
+	margin: 0 2%;
+}
+
+#result {
+	
+/*	height: 300px;*/
+}
