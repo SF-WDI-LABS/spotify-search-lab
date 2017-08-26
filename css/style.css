@@ -1,1 +1,43 @@
 /* put custom styles in this file */
+body {
+  background: #ffffff;
+}
+
+h1 {
+  margin-bottom: 50px;
+  padding: 20px;
+  display: block;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  padding: 15px;
+  text-transform: uppercase;
+  background: #2ebd59;
+  font-family: 'Lato', Arial;
+}
+
+.results-format {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  border: 1px;
+  border-bottom-style: solid;
+  border-color: #DCDCDC;
+  width: auto;
+}
+
+img {
+  float: left;
+  display: block;
+  max-width: 150px;
+  width: auto;
+  height: auto;
+  padding-right: 10px;
+}
+
+.song-artist {
+  font-family: 'Lato', Arial;
+  font-size: 12px;
+}

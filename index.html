@@ -13,6 +13,7 @@
 
   <!-- custom styles -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
   <!-- jquery -->
   <!-- Note: using subresource integrity; see: https://en.wikipedia.org/wiki/Subresource_Integrity -->
@@ -21,14 +22,32 @@
   <script type="text/javascript" src="js/app.js"></script>
 
 </head>
+
+
 <body>
+
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
+
+        <!-- Search bar Spotify -->
+        <form class="spotify-search">
+          <label>Search by Song Title</label>
+          <input type="search" class="form-control gif-input" name="q" value="" id="input-field">
+          <input type="hidden" name="type" value="track">
+          <input type="submit" value="Search" class="btn btn-primary btn-block">
+        </form>
+
+        <!-- List of results from Spotify -->
         <div id="results"></div>
+        <div class="apiresults"></div>
+
       </div>
+
+    <!-- THe first container and row       -->
     </div>
   </div>
+
 </body>
 </html>
