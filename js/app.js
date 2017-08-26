@@ -4,18 +4,28 @@ $(document).ready( function() {
   // check to make sure JS is loaded
   console.log('JS is loaded!');
 
+
+
   // your code here
-  $('.butt').submit(function(){
+  $('#spSearch').submit(function(event){
+    event.preventDefault();
+    let name = $('#qName').val();
+    let type = $('input.qType:checked').val();
     $.ajax({
       method: 'GET',
       url: "https://api.spotify.com/v1/search",
       data: {
-        q: $('#qName').val(),
-        type: $('#qType').val()
+        q: name,
+        type: type
       },
       headers: {
-        "authorization": "Bearer BQCt71ojl381dFiRTKz98bY-jilJLacij_5rGMf0XWfQzX2EZIc8vZ7hcenDlx89bVM9nRTKpdaAywy8M3MZ-Q"
+        "Authorization": "Bearer BQBHyYTxQNw__OenpoWCSyHDFEOG5MrTmW-cYX-83QfB18fafkGxLCtHTThlYw7Oijc2zmh-VULq07eNOUfHIg"
       }
+    })
+    .then(function(data){
+      console.log(data);
     });
+    $('#spSearch').trigger('reset');
   });
+
 });
