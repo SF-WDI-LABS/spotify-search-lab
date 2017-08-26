@@ -5,7 +5,6 @@ $(document).ready( function() {
   console.log('JS is loaded!');
 
 
-
   // your code here
   $('#spSearch').submit(function(event){
     event.preventDefault();
@@ -24,8 +23,10 @@ $(document).ready( function() {
     })
     .then(function(data){
       console.log(data);
+
     });
     $('#spSearch').trigger('reset');
+    $('#resTitle').text(`${type}s - "${name}"`);
   });
 
 });

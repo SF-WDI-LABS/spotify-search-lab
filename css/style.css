@@ -6,3 +6,7 @@
  .butt {
    width: 160px;
  }
+#resTitle {
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
