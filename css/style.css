@@ -2,3 +2,7 @@
 form {
   text-align: center;
 }
+
+.class-col-md-3 {
+  box-sizing: content-box;
+}

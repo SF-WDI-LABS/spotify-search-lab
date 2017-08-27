@@ -40,19 +40,17 @@ $(document).ready(function() {
           // first for loop to setup new array to loop through
           for(i=0; i < searchResults.items.length; i++){
             // variable for new array
+          let newSong  = searchResults.items[i].name;
           let newArtist = searchResults.items[i].album.artists;
             // second for loop for new array
             for(j=0; j < newArtist.length; j++){
               // call of position of second for loop to get required data
               let nextArtist = newArtist[j].name;
-                let songName = data.tracks.items;
-                  for(k=0; k < songName.length; k++){
-                    let newSong = songName[k].name;
                     console.log(newSong);
-              $("#results").append(`<div id="results"><p>Song:${newSong}</p><p>Artist:${nextArtist}</p></div>`)
+              $("#results").append(`<div id="results" class="col-md-3"><p>Song:${newSong}</p><p>Artist:${nextArtist}</p></div>`)
             }
           }
-        }})
+        })
         .catch(function(err){
           console.log("err");
         });
