@@ -34,3 +34,9 @@ main{
 audio{
 	width: 100%;
 }
+
+img{
+	margin: auto;
+	width: 50%;
+	height: 50%;
+}

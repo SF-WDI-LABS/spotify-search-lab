@@ -42,6 +42,8 @@ $(document).ready( function() {
   		alert("Please enter a title");
   		return;
   	}
+  	$result.html(`<img src="images/loading.gif">`);
+
   	$.ajax({
   		type: "GET",
   		url: `https://api.spotify.com/v1/search`,
@@ -52,7 +54,7 @@ $(document).ready( function() {
   		},
   		headers: {
 	  		// Bearer yourTokenFromWebApp
-	  		"Authorization": "Bearer BQC8mf1pEqF3lsAkQed6CRYaUv670uJZsjfTWvWY2jPxNIgVOK4jfPI2_b7vC6Qx4-FBtK3VbzmfrPgerhOILQ"
+	  		"Authorization": "Bearer BQAv9eiDyISmbtEAMms98r-mD7W3BQ7gP-ymvsjQcVdLdQt9V2gWbWZFqiRs8Dvpwo7845AYwkhICAWkxuufXQ"
 	  	}
 	  }) .then(function(response){
 	  	console.log(response);
