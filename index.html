@@ -19,6 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <!-- custom script -->
   <script type="text/javascript" src="js/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
 
 </head>
 <body>
@@ -26,9 +27,44 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <br>
+        <form class="search-form">
+          <input type="search-input" placeholder="Search Here">
+            <select name="type-search-query">
+              <option value="track">Track</option>
+              <option value="artist" disabled>Artist</option>
+              <option value="album" disabled>Album</option>
+              <option value="playlist" disabled>Playlist</option>
+            </select>
+          <button class='submit' type='submit'>Submit</button>
+        </form>
       </div>
     </div>
-  </div>
+    <br>
+    <br>
+    <div id="results"></div>
+
+
 </body>
 </html>
+
+<!--  HOW IT SHOULD LOOK after RESULTS
+
+
+    <div class="remove col-md-4">
+      <img class='album-img' src='images/albumtest.jpeg'>
+
+    <div class='playicon-div'>
+      <a href='www.google.com'><img class='playicon-img' src='images/playicon.png'></a> Artist Name | Track Title
+    </div>
+    </div>
+
+    <div class="remove col-md-4"><img class='album-img' src='images/albumtest.jpeg'>
+      <div class='playicon-div'><a href='www.google.com'><img class='playicon-img' src='images/playicon.png'></a> Artist Name | Track Title
+      </div>
+    </div>
+    <div class="remove col-md-4"><img class='album-img' src='images/albumtest.jpeg'>
+      <div class='playicon-div'><a href='www.google.com'><img class='playicon-img' src='images/playicon.png'></a> Artist Name | Track Title
+      </div>
+    </div>
+-->
