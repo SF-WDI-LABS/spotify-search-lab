@@ -1,1 +1,55 @@
 /* put custom styles in this file */
+.submit {
+	margin-top: 30px;
+}
+
+.songs {
+	border:1px solid black;
+}
+
+.songs>h2 {
+	text-align: center;
+}
+.songs>h5 {
+	text-align: center;
+}
+
+.preview {
+	margin-left:100px;
+}
+
+.artistImg {
+	width:150px;
+}
+
+.box {
+	border:1px solid black;
+	text-align: center;
+}
+
+#search-form {
+margin-top:0px;
+
+}
+
+#search-field {
+	width:500px;
+	height:40px;
+}
+
+#search-button {
+	width:500px;
+	background:green;
+	color:white;
+	font-weight: bold;
+	font-size:20px;
+}
+
+
+.center {
+	text-align: center;
+}
+
+
+
+
