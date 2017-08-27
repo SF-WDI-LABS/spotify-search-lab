@@ -1,1 +1,67 @@
-/* put custom styles in this file */
+
+
+body {
+  background-color: #c6f;
+}
+
+.input {
+  background-color: #d0d0e1;
+  width: 40%;
+}
+
+.submit-button {
+  background-color: #0f0;
+  width: 40%;
+  margin-left: 15%;
+}
+
+#results {
+  padding: 3vw;
+  display: block;
+  float: left;
+  width: 100%;
+  height: auto;
+
+}
+
+.resultwrapper {
+  display: inline-block;
+  width: 30vw;
+}
+.result {
+  position: relative;
+  width: 30vw;
+  height: 30vw;
+  margin: 0.40rem;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.btn {
+  position: absolute;
+  left: 12vw;;
+  bottom: 0px;
+  z-index: 100;
+}
+
+.imgclass {
+  width: 85%;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+}
+
+.resultP {
+  width: 30vw;
+}
+
+.nodisplay {
+  display: none;
+}
+.loading {
+  position: fixed;
+  width: 20vw;
+  height: 20vw;
+  top: 35vh;
+  left: 40vw;
+}
