@@ -27,10 +27,10 @@ $(document).ready(function() {
         data: {
           query:userSearch,
           type: "track",
-          limit: 15
+          limit: 12
         },
         headers: {
-          "Authorization":"Bearer BQBTs83yuKI0KoiIjcKLLU3rImywwIQggbZxC_8r5rxY0By0SO7t7tgZEAR72dI8w1DngdQ7Gi3l3YxVtgeauw"
+          "Authorization":"Bearer BQDkyP5_6VhD3eXEOyHTgrjJrqmGEk-KtRYTQSnGdCuA2EHJ4igYryQxFbbHx93hBJcB00emo3_r5puFd7v0zg"
         }
       })
         .then(function(data){
@@ -41,18 +41,20 @@ $(document).ready(function() {
           for(i=0; i < searchResults.items.length; i++){
             // variable for new array
           let newSong  = searchResults.items[i].name;
+          let preview = searchResults.items[i].preview_url;
           let newArtist = searchResults.items[i].album.artists;
             // second for loop for new array
             for(j=0; j < newArtist.length; j++){
               // call of position of second for loop to get required data
               let nextArtist = newArtist[j].name;
                     console.log(newSong);
-              $("#results").append(`<div id="results" class="col-md-3"><p>Song:${newSong}</p><p>Artist:${nextArtist}</p></div>`)
+              $("#results").append(`<div id="results" class="col-lg-offset-4"><p><strong>${newSong}</strong> by ${nextArtist}</p>
+              <a href=${preview}><button>Preview</button></a></div><div></div>`)
             }
           }
         })
         .catch(function(err){
-          console.log("err");
+          alert("Please enter in a search value");
         });
       });
     });

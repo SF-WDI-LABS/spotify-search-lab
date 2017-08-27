@@ -1,8 +1,17 @@
 /* put custom styles in this file */
 form {
   text-align: center;
+  margin: 15px;
 }
 
-.class-col-md-3 {
+.container{
   box-sizing: content-box;
+  margin-right: 10%;
+}
+
+.container-fluid {
+  padding: 10%;
+}
+.col-lg-offset-4{
+  margin: 10%;
 }
