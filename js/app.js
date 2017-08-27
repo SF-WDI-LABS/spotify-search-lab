@@ -1,18 +1,18 @@
 // wait for DOM to load before running JS
-$(document).ready( function() {
+$(document).ready(function() {
 
   // check to make sure JS is loaded
   console.log('JS is loaded!');
 
   // your code here
 
-  let artistUpdate = function(){
-    return `
-      <div id="results">
-        ${info}
-      </div>
-    `
-      };
+  // let artistUpdate = function(){
+  //   return `
+  //     <div id="results">
+  //       ${info}
+  //     </div>
+  //   `
+  //     };
 
 
 
@@ -26,13 +26,15 @@ $(document).ready( function() {
         url:"https://api.spotify.com/v1/search",
         data: {
           query:userSearch,
-          type: "track"
+          type: "track",
+          limit: 15
         },
         headers: {
-          "Authorization":"Bearer BQAMTTM1RQpSwIW82tn63DLYSq91UjGBtG_1aUZuc9xOwhiClJjf0qNf_NByd_hY69s5_LFBD--Q_mvLJVrV5g"
+          "Authorization":"Bearer BQBTs83yuKI0KoiIjcKLLU3rImywwIQggbZxC_8r5rxY0By0SO7t7tgZEAR72dI8w1DngdQ7Gi3l3YxVtgeauw"
         }
       })
         .then(function(data){
+          $("#results").empty();
           // create new variable for initial array
           let searchResults = data.tracks;
           // first for loop to setup new array to loop through
@@ -43,13 +45,16 @@ $(document).ready( function() {
             for(j=0; j < newArtist.length; j++){
               // call of position of second for loop to get required data
               let nextArtist = newArtist[j].name;
-              $("#results").append(`<div id="results"><p>Artist:${nextArtist}</p></div>`);
+                let songName = data.tracks.items;
+                  for(k=0; k < songName.length; k++){
+                    let newSong = songName[k].name;
+                    console.log(newSong);
+              $("#results").append(`<div id="results"><p>Song:${newSong}</p><p>Artist:${nextArtist}</p></div>`)
             }
           }
-        })
-
+        }})
         .catch(function(err){
           console.log("err");
-        })
-        })
+        });
       });
+    });
