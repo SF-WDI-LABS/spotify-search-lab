@@ -30,7 +30,7 @@ $(document).ready(function() {
           limit: 12
         },
         headers: {
-          "Authorization":"Bearer BQDkyP5_6VhD3eXEOyHTgrjJrqmGEk-KtRYTQSnGdCuA2EHJ4igYryQxFbbHx93hBJcB00emo3_r5puFd7v0zg"
+          "Authorization":"Bearer BQB057DtVVdFFH7JR1ZwAasa65s8TcPns5Few-aR4s8cLFp-Y1Ci3OYv-cD_EscyeGwACnOyIXBlKW34BiKeHQ"
         }
       })
         .then(function(data){
@@ -48,8 +48,9 @@ $(document).ready(function() {
               // call of position of second for loop to get required data
               let nextArtist = newArtist[j].name;
                     console.log(newSong);
-              $("#results").append(`<div id="results" class="col-lg-offset-4"><p><strong>${newSong}</strong> by ${nextArtist}</p>
-              <a href=${preview}><button>Preview</button></a></div><div></div>`)
+                    console.log(nextArtist);
+              $("#results").append(`<div id="results" class="col-lg-offset-4"><p><strong>${newSong}</strong></p><p> by ${nextArtist}</p>
+              <a href=${preview}><button type="button">Preview</button></a><div></div></div>`)
             }
           }
         })
