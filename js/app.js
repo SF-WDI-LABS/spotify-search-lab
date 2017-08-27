@@ -6,13 +6,13 @@ $(document).ready( function() {
 
   // your code here
 
-let artistUpdate = function(){
-  return `
-  <div id="results">
-    ${info}
-    </div>
-  `
-}
+  let artistUpdate = function(){
+    return `
+      <div id="results">
+        ${info}
+      </div>
+    `
+      };
 
 
 
@@ -29,18 +29,27 @@ let artistUpdate = function(){
           type: "track"
         },
         headers: {
-          "Authorization":"Bearer BQD4CMS4B19xLe7V06Iql8cdp5tJry9mrwVV5QNo0YNAJUcqrqAA9pzKEQxi5lYF0Y2q8i9YQ7xon_I1LxOblg"
+          "Authorization":"Bearer BQAXMCcjJ5N4-nMkGlrvVqvvOgNT7m30y9nXTRhRs3dEz8Ctu9JW58KHTEC4B3qmylwxr1XWPZFM2--zwHaRKA"
         }
       })
         .then(function(data){
-          for(i=0; i > data.tracks.length; i++){
-          let newArtist = data.tracks[i].artists[i].name;
-          $("#results").append(`<div id="results"><p>${newArtist}</p></div>`)
-        }
-      })
+          // create new variable for initial array
+          let searchResults = data.tracks;
+          // first for loop to setup new array to loop through
+          for(i=0; i < searchResults.items.length; i++){
+            // variable for new array
+          let newArtist = searchResults.items[i].album.artists;
+            // second for loop for new array
+            for(j=0; j < newArtist.length; j++){
+              // call of position of second for loop to get required data
+              let nextArtist = newArtist[j].name;
+              console.log(nextArtist);
+            }
+          }
+        })
+
         .catch(function(err){
           console.log("err");
         })
-
-    })
-});
+        })
+      });
