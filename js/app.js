@@ -6,22 +6,21 @@ $(document).ready( function() {
 
   // your code here
 
-  function song_template(image_url, title, artists, preview_url){
+  function song_template(image_url, title, artists, preview_url, url_link){
   	var preview = "";
-  	// Make the link visible if its not null
-  	// if the url is null, by default it will be a '#'
+  	// Make the audio control available if its not null
   	if (preview_url === null || preview_url === undefined ) {
   		preview_url = '#';
   	} else preview = ` <audio controls>
 							  		<source src="${preview_url}" type="audio/mpeg">
 							 </audio> `
-							  	
+	// Generate a html card element from given attribute
   	return 	`
   	<div class="col-4">
 	  	<div class="card">
 		  	<img class="card-img-top" src=${image_url} alt="song_image">
 		  	<div class="card-body">
-		  	<h4 class="card-title">${title}</h4>
+		  	<a href=${url_link} class="card-title" target="_blank">${title}</a>
 		  	<p class="card-text">By ${artists}</p>
 		  	${preview}
 		  	</div>
@@ -36,7 +35,8 @@ $(document).ready( function() {
 
   $(".search_form").on("submit", function(event){
   	event.preventDefault();
-
+  	// Only accept non empty inputs. The resule will be better 
+  	// if I filter out all special characters with regex
   	if($query.eq(0).val() !== "") input = $query.eq(0).val();
   	else { 
   		alert("Please enter a title");
@@ -52,7 +52,7 @@ $(document).ready( function() {
   		},
   		headers: {
 	  		// Bearer yourTokenFromWebApp
-	  		"Authorization": "Bearer BQCbOZHApC7hNRRS7e1LN-1Jt6oejkoFTleZedseXltTpXggw_4nXyHjQbNs_RscPn0CuV9pRqfU4OknD1aYVg"
+	  		"Authorization": "Bearer BQC8mf1pEqF3lsAkQed6CRYaUv670uJZsjfTWvWY2jPxNIgVOK4jfPI2_b7vC6Qx4-FBtK3VbzmfrPgerhOILQ"
 	  	}
 	  }) .then(function(response){
 	  	console.log(response);
@@ -70,19 +70,16 @@ $(document).ready( function() {
 		  	for(var i =0; i< item.artists.length; i ++){
 		  		artists =  item.artists[i].name + ", " + artists;
 		  	}
+		  	// Passing in images url, song name, artists, 
+		  	// preview audio url, and spotify url and append them to page
 		  	$result.append(song_template(	item.album.images[1].url,
 		  							item.name,
 		  							artists.slice(0,artists.length-2),
-		  							item.preview_url));
+		  							item.preview_url,
+		  							item.external_urls.spotify));
 		  	artists = "";
 	  	});
 	  
-	  	// for(var i =0; i < items.length; i ++){
-
-	  	// 	$result.append(`<p> ${items[i].artists[0].name}</p>`);
-	  	// }
-	  	//$result.append
-
 	  }).catch(function(error){
 	  	console.log(error);
 	  });

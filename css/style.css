@@ -23,16 +23,9 @@ main{
 }
 
 .card {
-/*	width: 300px;
-	height: 300px;*/
-	margin-bottom: 20px;
+	margin: 20px;
 }
 
-/*#results{
-	width: 100px;
-	height: 100px;
-	border: 10px solid black;
-}*/
 
 .col-4 {
 	height: auto;
