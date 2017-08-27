@@ -17,9 +17,25 @@ $(document).ready( function() {
       <div class="remove col-md-4">
         <img class='album-img' src='${albumPic}'>
       <div class='playicon-div '>
-      <a href='${playIconLink}'><img class='playicon-img' src='images/playicon.png'></a> ${artistName} | ${trackName}
+      <a href='${playIconLink}' target="_blank"><img class='playicon-img' src='images/playicon.png'></a> ${artistName} | ${trackName}
       </div>
      </div>
+      `);
+  };
+  let onLoadHTML = function() {
+    $results.append(`
+      <div class='remove'>
+        <h2>There are so many songs you can search for... what will you search for?</h2>
+      </div>
+      `);
+  };
+  onLoadHTML();
+
+  let onFailHTML = function() {
+    $results.append(`
+      <div class='remove'>
+        <h2>Uh Oh... Sorry! Something is not working. Can you try again?</h2>
+      </div>
       `);
   };
   // when a search-form is submitted it does the following:
@@ -30,6 +46,7 @@ $(document).ready( function() {
     // 5. goes into the ajax call and brings back the info $.ajax
     // 6. .then => takes the data and then parses it so we can send it into the albumHTML to append all the info
     // 7. invokes alumnHTML variable with the values and appends all the html that we need
+
   $('.search-form').on('submit', function() {
     $('.remove').remove();
     event.preventDefault();
@@ -46,7 +63,7 @@ $(document).ready( function() {
         type: type
     },
     headers: {
-        "Authorization": "Bearer BQCmare2bOTkAp4Xkri7gxfB_LzueruZlsJRYu8uTDdrDcDJHyxQdBVDozq3bS5ZKPwFwznxffmaeyCP3mYtAA"
+        "Authorization": "Bearer BQAbRlJPFZF8VTedCEXYKV8ZRaKmsl5C_ou4HirliN8I59iOaBj5CTOUX56HJ0tQ1fxrP7Tx95apK9luvOiDRw"
     }
   })
   .then(function(data){
@@ -76,7 +93,7 @@ $(document).ready( function() {
   })
   .catch(function(err){
     console.log('AJAX is broken: ', err);
-    alert('Sorry! Something is not working. Can you try again?')
+    onFailHTML();
     });
   });
 });
