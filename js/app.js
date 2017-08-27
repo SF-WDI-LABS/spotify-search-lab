@@ -29,7 +29,7 @@ $(document).ready( function() {
           type: "track"
         },
         headers: {
-          "Authorization":"Bearer BQAXMCcjJ5N4-nMkGlrvVqvvOgNT7m30y9nXTRhRs3dEz8Ctu9JW58KHTEC4B3qmylwxr1XWPZFM2--zwHaRKA"
+          "Authorization":"Bearer BQAMTTM1RQpSwIW82tn63DLYSq91UjGBtG_1aUZuc9xOwhiClJjf0qNf_NByd_hY69s5_LFBD--Q_mvLJVrV5g"
         }
       })
         .then(function(data){
@@ -43,7 +43,7 @@ $(document).ready( function() {
             for(j=0; j < newArtist.length; j++){
               // call of position of second for loop to get required data
               let nextArtist = newArtist[j].name;
-              console.log(nextArtist);
+              $("#results").append(`<div id="results"><p>Artist:${nextArtist}</p></div>`);
             }
           }
         })
