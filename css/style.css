@@ -10,3 +10,12 @@
   text-transform: capitalize;
   margin-bottom: 30px;
 }
+.resShow {
+  display: flex;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+.resShow h2 {
+  margin: 50px;
+}
