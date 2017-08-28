@@ -1,1 +1,44 @@
 /* put custom styles in this file */
+.results {
+  display: flex;
+  margin: auto;
+
+}
+img {
+  flex: right;
+  margin: auto;
+}
+p {
+  text-align: center;
+  font-size: 100%;
+}
+h2 {
+  margin-left: 20px;
+}
+form {
+  margin-bottom: 10px;
+}
+.col-md-4 {
+  text-align: center;
+}
+.row {
+  text-align: center;
+}
+.playicon-div {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.playicon-img {
+  width: 50px;
+
+}
+
+div {
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+    box-sizing: border-box;
+}
