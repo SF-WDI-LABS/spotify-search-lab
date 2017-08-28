@@ -4,7 +4,7 @@ $(document).ready( function() {
   // https://spotify-token-finder.herokuapp.com/
   let query = $(".search-bar").val();
   let type = $('.select-type').val();
-  $(".search-form").on("click", function(event) {
+  $(".submit").on("click", function(event) {
     event.preventDefault();
     query = $(".search-bar").val();
     type = $(".select-type").val();
@@ -20,24 +20,29 @@ $(document).ready( function() {
 
           //check the api for the other types, currently, only album works
         type: type,
-        limit: 20
+        // limit: 20
       },
       headers: {
-        Authorization: "Bearer BQDgaUR_nU5N_k-XJi9X4Hr-qu8j6S7flwAgZG_sjbxIeqxfrUCMu0SVpSbwntacr3K4XlQ-kPH3SBSoRZzuXA"
+        Authorization: "Bearer BQAO_Zjb7DDcy0Jz9D0NUfwWxBb5C7MzLFyNxIkOqOgh05B7hQDe03qC2Ue9nORM7L1F5o1vMJ4x8Kv73EGFPg"
       }
     })
     .then(function(response) {
+      searchMap = {
+          album: "albums",
+          artist: "artists",
+          playlist: "playlists",
+          track: "tracks"
+      };
+      console.log(response);
+      console.log(type);
       $('.results-row1').html("");
-      for (let i = 0; i<response.albums.items.length; i++) {
-        $('.results-row1').append(`
+      for (let i = 0; i<response[searchMap[type]].items.length; i++) {
+          console.log(response[searchMap[type]].items[0].external_urls.spotify);
+          $('.results-row1').append(`
             <div id="results">
               <figure class = "figures col-sm-4">
-                <a href="${response.albums.items[0].external_urls.spotify}">
-                  <img class="img-album" src=${response.albums.items[i].images[1].url}>
-                </a>
-                <figcaption>
-                    ${response.albums.items[i].artists[0].name} - ${response.albums.items[i].name}
-                </figcaption>
+                <a href="${response[searchMap[type]].items[0].external_urls.spotify}">
+                  <img class="img-album" src=${response[searchMap[type]].items[i].album.images[1].url}>
               </figure>
             </div>
             `
