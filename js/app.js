@@ -12,7 +12,6 @@ $(document).ready( function() {
     searchInput = $('input[type="search"]').val();
     $('form')[0].reset();
 
-
   $.ajax({
       url: "https://api.spotify.com/v1/search",
       data: {
@@ -20,34 +19,30 @@ $(document).ready( function() {
           type: "track"
       },
       headers: {
-          "Authorization": "Bearer BQAAgv5sEcyHtMFQtblcBU890RNN_ptC-_7CrhfGjGK1A5FgsA7GUSFYZ1WPj0-EU2FWTapg_Tq2kL31D3oqvg"
+          "Authorization": "Bearer BQAFGzse8oC0dd67HFEmpJnLAxyRZ69_ddFJFnPuAMfaUonbeZaKG6qrswnEIZ8mImiLBmCpfy74f0WK3P2aeA"
       }
-
-})
+  })
 //preview_url
   .then(function(myTrack) {
-    console.log(myTrack)
-    // myTrack.tracks.forEach(function(feature) {
-      let artistName = myTrack.tracks.items[0].album.artists[0].name;
-      let artistImage = myTrack.tracks.items[0].album.images[1].url;
-      let artistPreviewSong = myTrack.tracks.items[0].preview_url;
+    myTrack.tracks.items.forEach(function(feature) {
+    // for (i = 0; i < 10; i++) {
+    // $.each(myTrack.tracks, function() {
+      let artistName = feature.album.artists[0].name;
+      let artistTrack = feature.album.name;
+      let artistImage = feature.album.images[1].url;
+      // let artistPreviewSong = myTrack.tracks.items[0].preview_url;
       console.log(artistName);
-      console.log(artistImage);
-      console.log(artistPreviewSong);
+      console.log(artistTrack);
+      // console.log(artistImage);
+      // console.log(artistPreviewSong);
       // console.log(feature);
       // console.log(tracks);
       // $("#results").append(newResults);
       // console.log("results?");
     // })
-    $("#results").html(artistName),
-    $("#artistImage").html('<img src="'+ artistImage +'"/>');
-    // 'keydown input[type="search"]': function(event, template) {
-    // if (13 === event.which) {
-    //     event.preventDefault();
-    //     //this should delete value from the input
-    //     event.currentTarget.value = "";
-    // }
-// }
+      $("#results").append(`<b>${artistTrack}</b> by ${artistName}` );
+      $("#artistImage").append('<img src="'+ artistImage +'"/>');
+    })
     })
   })
 });
