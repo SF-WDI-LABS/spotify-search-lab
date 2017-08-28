@@ -24,9 +24,29 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+      <!-- <div class="col-md-6 col-md-offset-3"> -->
+      <div>
+        <br>
+        <div class="container jumbotron text-center">
+          <h1>Spotify Search</h1>
+          <form id="spSearch">
+            <div class="form-group row">
+              <input type="search" id="qName" class="form-input" name="q" placeholder="Search Spotify..." value="">
+            </div>
+            <!-- <div class="form-group row">
+              <label for="qType"> What are you searching for? </label>
+              <label class="radio-inline"><input type="radio" name="type" value="track" class="qType">A Song</label>
+              <label class="radio-inline"><input type="radio" name="type" value="album" class="qType">An Album</label>
+              <label class="radio-inline"><input type="radio" name="type" value="artist" class="qType">An Artist</label>
+            </div> -->
+            <button type="submit" name="subSearch" class="butt btn-success btn-lg btn-primary round">Search</button>
+          </form>
+        </div>
+        <!-- <div class="resTitleDiv">
+          <h2 id="resTitle" class="text-center">Results</h2>
+        </div> -->
+        <div id="results" class="container">
+        </div>
       </div>
     </div>
   </div>

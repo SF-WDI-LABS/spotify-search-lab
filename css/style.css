@@ -1,1 +1,40 @@
 /* put custom styles in this file */
+#qName {
+  width: 67%;
+  margin-top: 10px;
+}
+ .butt {
+   width: 160px;
+ }
+#resTitle {
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  color: rgb(238,238,238);
+  display: none;
+}
+.resShow {
+  display: flex;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+.resShow h2 {
+  margin: 50px;
+}
+#results ul {
+  text-transform: capitalize;
+  margin-top: 10px;
+  list-style: none;
+}
+.resShow {
+  background: rgb(238,238,238);
+  padding: 30px;
+  border-radius: 6px;
+  margin-left: -30px;
+}
+.resShow img {
+  border-radius: 6px;
+}
+body {
+  background-color: black;
+}
