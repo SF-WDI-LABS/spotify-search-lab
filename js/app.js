@@ -7,6 +7,9 @@ $(document).ready( function() {
 
   // your code here
 
+  // Commented out lines were plans that I couldn't get working,
+  // So i'm going to come back to them.
+
   // function tempTrack (tracks){
   //   return `<div class='container inline'>
   //     <img src='${tracks.tracks.items[i].album.images[1].url}'>
@@ -25,17 +28,17 @@ $(document).ready( function() {
       url: "https://api.spotify.com/v1/search",
       data: {
         q: $name,
-        type: $type,
+        type: 'track',
         limit: 10
       },
       headers: {
-        "Authorization": "Bearer BQBHJT3zE3L3HXLa_X7U94DH4Zqkid2Va_XVm3qWEJfq4WbOKfaIU-2ohwOgXqyFbrd5hebQfxmSU1UgW3YUvw"
+        "Authorization": "Bearer BQAOvdcJN1PnNNx-goZB7JcL5H6kDMEVcOHtQV68qbBYNSu1W9toxySU36E7gM18RTFrVMJeSp-uYxwa-6yKNQ"
       }
     })
     .then(function(data){
       $('#results').html('');
       $('#resTitle').fadeIn(1);
-      if ($type = 'tracks'){
+      // if ($type = 'tracks'){
         for (let i=0;i < data.tracks.items.length;i++){
           $('#results').append(
             `<div class='container'>
@@ -52,22 +55,21 @@ $(document).ready( function() {
                 </div>
               </div>`
         )};
-      } else if ($type = 'artist'){
-          $('#results').append(
-            `<div class='container'>
-              <div class="resShow">
-                <img src='${data.artists.items[0].images[1].url}'>
-                  <ul>
-                    <li>Artist - ${data.artists.items[0].name}</li>
-                    <li>Genre - ${data.artists.items[0].genres[0]}</li>
-                    <li>Popularity - ${data.artists.items[0].popularity}/100</li>
-                  </ul>
-                </div>
-                <hr>
-              </div>`
-        )};
+      // } else if ($type = 'artist'){
+      //     $('#results').append(
+      //       `<div class='container'>
+      //         <div class="resShow">
+      //           <img src='${data.artists.items[0].images[1].url}'>
+      //             <ul>
+      //               <li>Artist - ${data.artists.items[0].name}</li>
+      //               <li>Genre - ${data.artists.items[0].genres[0]}</li>
+      //               <li>Popularity - ${data.artists.items[0].popularity}/100</li>
+      //             </ul>
+      //           </div>
+      //           <hr>
+      //         </div>`
+        });
       });
-    $name = null;
-    $type = null;
+    // $name = null;
+    // $type = null;
   });
-});
