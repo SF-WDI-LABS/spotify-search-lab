@@ -26,8 +26,19 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form class="search-form col-md-8 col-md-offset-2">
+          <input class="search-bar">
+          <select class="select-type">
+            <option value = "track">Track</option>
+            <option value = "album">Album</option>
+            <!--<option value = "artist">Artist</option>-->
+            <!--<option value = "playlist">Playlist</option>-->
+          </select>
+          <input class="submit" type="button" value="Submit">
+        </form>
       </div>
+    </div>
+    <div class="row results-row1">
     </div>
   </div>
 </body>
