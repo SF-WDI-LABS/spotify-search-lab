@@ -22,13 +22,21 @@
 
 </head>
 <body>
+<div class="jumbotron jumbotron-fluid">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h1 class="text-center">Spotify Search</h1>
-        <div id="results"></div>
+        <form id="searchForm">
+          <input type="search" id="mySpotifySearch" type="text" placeholder="Search for Music">
+          <br>
+          <br>
+          <button id="search" type="button" type="submit" class="btn btn-block btn-success">Search</button>
+        </form>
+        <div id="results" class="container-fluid" class="col-lg-offset-4"></div>
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>

@@ -1,1 +1,22 @@
 /* put custom styles in this file */
+form {
+  text-align: center;
+  margin: 15px;
+  display:block;
+}
+
+.container{
+  box-sizing: content-box;
+  margin-right: 10%;
+}
+
+.container-fluid {
+  padding: 10%;
+  text-align: center;
+}
+.col-lg-offset-2{
+  margin: 10%;
+}
+button {
+  margin-bottom: 10px;
+}
