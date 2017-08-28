@@ -1,1 +1,42 @@
 /* put custom styles in this file */
+input{
+	width: 100%;
+	margin: 7px 0 ;
+
+}
+
+input[type=submit]{
+
+}
+
+body {
+	background-color: rgb(218,215,215);
+}
+
+main{
+	margin: 0 2%;
+}
+
+#result {
+	
+/*	height: 300px;*/
+}
+
+.card {
+	margin: 20px;
+}
+
+
+.col-4 {
+	height: auto;
+}
+
+audio{
+	width: 100%;
+}
+
+img{
+	margin: auto;
+	width: 50%;
+	height: 50%;
+}
