@@ -63,17 +63,15 @@ $.ajax({
   }
 })
 .then(function(data){
-  // individual console log to get every value back
+  //These are all individual tests to return each respective response and variable
   console.log('Data is coming back: ', data);
   console.log('Get one title by track: ', data.tracks.items[0].name)
   console.log('Get one artist name by track: ', data.tracks.items[0].artists[0].name)
   console.log('Get one track preview: ', data.tracks.items[0].preview_url)
   console.log('Get one artist album cover: ', data.tracks.items[0].album.images[1].url)
-  // trackItem is a variable so its easier to write later
   let trackItem = data.tracks.items;
   console.log('Checking Get One Title by Track Variable: ', trackItem[0].name);
-  // forEach loop that is going through all the way to data.tracks.items and will iterate through EACH items. when iterating through items it it then setting the track name and the artist name. Only the item is changing and SINCE the  path after that item is the same for getting the artist name, use trackName.artists[0].name which is the same is data.tracks.items[X].artists[0].name. ONLY thing that is changing is the X in the data.tracks.items[X].
-  // After going through each of the artist name it is then pushing that information to alumnHTML variable which is a function that creates the individual lines
+  //this was the loop created to generate all the search results inputted from the User
   trackItem.forEach(function(trackName) {
     let indivTrackName = trackName.name;
     let indivArtistName = trackName.artists[0].name;
@@ -82,8 +80,7 @@ $.ajax({
     console.log(songPreview);
     console.log(albumPreview);
     console.log('Checking forEach for the artistName: ',trackName.artists[0].name);
-    // trackHTML(indivTrackName);
-    // artistHTML(indivArtistName)
+
     albumHTML(albumPreview, songPreview, indivArtistName, indivTrackName);
   });
 })
