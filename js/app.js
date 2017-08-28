@@ -42,24 +42,6 @@ $(document).ready( function() {
       })
 
     });
-    // your code her
+    
 
   });
-
-
-// $("#search-form").on("submit", function(event) {
-//       event.preventDefault();
-//
-//       var userSearchRequest = $("#search-field").val();
-//
-//       $.ajax({
-//           type: "GET",
-//           url: "http://api.giphy.com/v1/gifs/search",
-//           data: {
-//               api_key: "5903ea6b283d4472a8834a5ed294b1f5",
-//               q: userQuery
-//           }
-//       })
-//       .then(showGifs)
-//
-//   });
