@@ -11,8 +11,13 @@ $(document).ready( function() {
     $results.empty();
 
     data.tracks.items.forEach(function(element){
+      if (element.preview_url != null){
       $results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
-      <p>${element.name} by ${element.album.artists[0].name}</p></div>`);
+      <p>${element.name} by ${element.album.artists[0].name}</p><br><a class="btn btn-outline-success" href=${element.preview_url}>Preview</a>
+      </div>`)}
+      else{$results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
+      <p>${element.name} by ${element.album.artists[0].name}</p>
+      </div>`)}
     })
   }
 
@@ -33,7 +38,7 @@ $(document).ready( function() {
           limit: 30
         },
         headers:{
-          "Authorization": "Bearer BQBdp_Ys4TeEAGgT8SNfgmX8UpuHOHeq27v9R7-9SgqHZbCWgeyAKIr-YyOhTzZGatJw6MUaNUNd_qaR8Scl_Q"
+          "Authorization": "Bearer BQCTB-NhQmRPiQcAjJakWyaIZNlDq4nxBkoKVVKHNk-pgRCyT1Zo0n27eRFQRTjHRM1kIOXGZAT34K3vFEoPVg"
         }
       })
       .then(displaySongInfo)
@@ -42,6 +47,6 @@ $(document).ready( function() {
       })
 
     });
-    
+
 
   });
