@@ -4,27 +4,29 @@ $(document).ready( function() {
   // check to make sure JS is loaded
   console.log('JS is loaded!');
 
-
+  
 
   var displaySongInfo = function(data){
     var $results = $("#results");
     $results.empty();
+    console.log(data.tracks.items.length);
+    if (data.tracks.items.length === 0){$results.append("<h1>That search was no good try another.</h1>")}
 
     data.tracks.items.forEach(function(element){
       if (element.preview_url != null){
-      $results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
-      <p>${element.name} by ${element.album.artists[0].name}</p><br><a class="btn btn-outline-success" href=${element.preview_url}>Preview</a>
-      </div>`)}
-      else{$results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
-      <p>${element.name} by ${element.album.artists[0].name}</p>
-      </div>`)}
-    })
-  }
+        $results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
+        <p>${element.name} by ${element.album.artists[0].name}</p><br><a class="btn btn-outline-success" href=${element.preview_url}>Preview</a>
+        </div>`)}
+        else{$results.append(`<div class="col-sm-4 row-eq-height"><img src=${element.album.images[2].url} alt="images/spotify_2015.png"><br>
+        <p>${element.name} by ${element.album.artists[0].name}</p>
+        </div>`)}
+      })
+    }
 
-  $("#search-form").on("submit", function(event) {
-    event.preventDefault();
-    var userSearchRequest = $("#search-field").val();
-    console.log(userSearchRequest);
+    $("#search-form").on("submit", function(event) {
+      event.preventDefault();
+      var userSearchRequest = $("#search-field").val();
+      console.log(userSearchRequest);
 
 
 
@@ -43,7 +45,7 @@ $(document).ready( function() {
       })
       .then(displaySongInfo)
       .catch(function(err) {
-          console.log(err);
+        console.log(err);
       })
 
     });
