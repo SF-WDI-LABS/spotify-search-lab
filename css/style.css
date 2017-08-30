@@ -1,1 +1,44 @@
-/* put custom styles in this file */
+body {
+  font-family: 'Baloo Bhaijaan', cursive;
+  background-color: #FEFEFE;
+}
+.results {
+  display: flex;
+}
+img {
+  flex: right;
+  margin: auto;
+}
+p {
+  text-align: center;
+  font-size: 125%;
+}
+h2 {
+  margin-left: 15px;
+}
+form {
+  margin-bottom: 10px;
+}
+/*.container-album {
+  display: flex;
+  flex: right;
+}*/
+.col-md-4 {
+  text-align: center;
+}
+
+.playicon-div {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+.playicon-img {
+  width: 50px;
+
+}
+
+.row {
+  text-align: center;
+}
