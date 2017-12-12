@@ -1,1 +1,25 @@
 /* put custom styles in this file */
+a{
+  font-size: 20px;
+}
+#results{
+  background-color: #f0f0f0;
+  border:1px solid black;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 400;
+  padding:10px;
+  text-align: center;
+}
+#search{
+
+}
+h4{
+  text-align: left;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+h3{
+  text-decoration: underline;
+  color: red;
+}
