@@ -1,1 +1,35 @@
 /* put custom styles in this file */
+a{
+  font-size: 20px;
+}
+#results{
+  background-color: #f0f0f0;
+
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 400;
+  padding:10px;
+  text-align: center;
+}
+#search{
+background-color: #f0f0f0;
+padding: 10px;
+}
+h4{
+  text-align: left;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+h3{
+  text-decoration: underline;
+  color: red;
+}
+p{
+  text-align: justify;
+}
+a{
+  font-style: italic;
+}
+body{
+  background-color: #e0e0e0;
+}
