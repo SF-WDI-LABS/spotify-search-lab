@@ -28,16 +28,26 @@
         <h1 class="text-center">Tv Shows Search</h1>
         <br>
         <form id="search">
+
           <div class="form-group">
-                  <input class="form-control" id="input_id1" name="q" placeholder="Search by Actors Name" autofocus>
-            <p> Or </p>
-
-              <input class="form-control" id="input_id2" name="q" placeholder="Search by Show Name" autofocus>
-
+            <input type="radio" id="r1" name="category" > Search By Actor
+            &nbsp; &nbsp; &nbsp;
+            <input type="radio" id="r2" name="category" > Search By Show
           </div>
+
+          <hr>
+          <div class="form-group">
+            <input class="form-control" id="input_id1" name="q" placeholder="Search by Actors Name">
+          </br>
+           <input class="form-control" id="input_id2" name="q" placeholder="Search by Show Name">
+          </div>
+
+
           <div class="form-group">
             <input type="submit" id="search_btn" class="btn btn-block btn-success" value="Search">
           </div>
+
+
         </form>
         <br>
         <div id="results"></div>
